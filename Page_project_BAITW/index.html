@@ -36,7 +36,7 @@
                         <nav class="navbar d-md-none sticky-md">
                             <div class="container-fluid">
                                 <form class="d-flex">
-                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                    <input class="form-control me-2 d-flex p-2" type="search" placeholder="Search" aria-label="Search">
                                     <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
                                 </form>
                             </div>
@@ -66,51 +66,56 @@
         </div>
     </nav>
     
-    <br>
     <!--  Carousel  -->
 
-    <div class="container-fluid">
-        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <div class="container-fluid bg-secondary" id="margin__top_fluid">
+      <div class="container d-block p-2" id="margin__top">
+          <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-fad" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                  <img src="./src/img/Carousel/image.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <img src="./src/img/Carousel/image-2.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="./src/img/Carousel/image-3.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="10000">
-                <img src="./src/img/Carousel/image.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                </div>
-              </div>
-              <div class="carousel-item" data-bs-interval="2000">
-                <img src="./src/img/Carousel/image-2.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="./src/img/Carousel/image-3.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                </div>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+      </div>
     </div>
-    <!--  Cont page  -->
+    <!--  Cont page cambiar mas adelante -->
     <div class="container">
         <div class="row">
-            <div class="col-4">
-                
+            <div class="col-xl-4 col-md-6">
+                <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste animi veritatis dolor illo repudiandae quo saepe autem facere deserunt officia!</span>
             </div>
-            <div class="col-4"></div>
-            <div class="col-4"></div>
+            <div class="col-xl-4 col-md-6">
+              <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, nemo asperiores inventore pariatur numquam excepturi delectus alias saepe eligendi aspernatur!</span>
+            </div>
+            <div class="col-xl-4 col-md-6">
+              <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit incidunt unde eum ipsum error, numquam dolore odio debitis ratione dicta?</span>
+            </div>
         </div>
     </div>
     

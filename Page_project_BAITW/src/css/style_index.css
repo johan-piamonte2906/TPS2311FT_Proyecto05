@@ -1,3 +1,11 @@
 .navbar-brand a{
     cursor: none;
 }
+
+#margin__top{
+    margin-top: 8px;
+}
+
+#margin__top_fluid{
+    margin-top: -7px;
+}
