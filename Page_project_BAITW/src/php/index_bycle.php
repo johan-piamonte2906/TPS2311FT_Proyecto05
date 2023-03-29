@@ -107,7 +107,7 @@
                 <img src=" <?php echo $imagen; ?> " alt="">
                 <div class="card-body">
                   <h5 class="card-title"> <?php echo $row['nombres']; ?> </h5>
-                  <p class="card-text">$<?php echo $row['precio']; ?></p>
+                  <p class="card-text">$<?php echo number_format($row['precio'],3, '.', ','); ?></p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <a href="#" class="btn btn-primary">Detalles</a>

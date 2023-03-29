@@ -133,6 +133,7 @@
                 <i class="fa-brands fa-cc-visa"></i>
                 <i class="fa-brands fa-cc-mastercard"></i>
                 <i class="fa-solid fa-credit-card"></i>
+                <i class="fa-brands fa-cc-paypal"></i>
               </div>
             </div>
           </div>
