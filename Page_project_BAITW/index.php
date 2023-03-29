@@ -13,13 +13,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <!--  Fav-icon  -->
     <link rel="shortcut icon" href="./src/img/fav-icons/favicon-bicycle.png" type="image/m-icon">
-    <!-- FONT AWEASOME 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    -->
+    <!-- FONT AWEASOME -->
+	  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <!--  Nav  -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
+    <nav class="navbar navbar-expand-md fondo-all" id="backgronud-all">
         <div class="container-fluid">
             <a href="#" class="navbar-brand text-dark" style="cursor: default;">
                 <i class="bi bi-bicycle "class="d-inline-block align-text-top"></i>
@@ -27,7 +27,8 @@
             </a>
             <!--  Button  -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <!-- <span class="navbar-toggler-icon bg-secondary"></span> -->
+                <i class="navbar-toggle-icon bi bi-list"></i>
               </button>
 
             <div class="collapse navbar-collapse" id="menu">
@@ -41,12 +42,6 @@
                                 </form>
                             </div>
                         </nav>
-                        <a href="#" class="me-auto nav-link active color-dark dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
-                        <ul class="dropdown-menu" aria-labelledby="nabarDropdown">
-                            <li><a href="" class="dropdown-item">contact</a></li>
-                            <!--<hr class="dropdown-divider">-->
-                            <li><a href="" class="dropdown-item">Help</a></li>
-                        </ul>
                     </li>
                     <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Events</a></li>
                     <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Maintenance</a></li>
@@ -65,46 +60,39 @@
               </nav>
         </div>
     </nav>
-    
-    <!--  Carousel  -->
+    <!-- /Nav -->
 
-    <div class="container-fluid bg-secondary" id="margin__top_fluid">
-      <div class="container d-block p-2" id="margin__top">
-          <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-fad" data-bs-ride="carousel">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <!--  Carousel  -->
+     <main id="main">
+      <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-fad" data-bs-ride="carousel" data-pause="false">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="./src/img/Carousel/image.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
               </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="10000">
-                  <img src="./src/img/Carousel/image.jpg" class="d-block w-100" alt="...">
-                  <div class="carousel-caption d-none d-md-block">
-                  </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <img src="./src/img/Carousel/image-2.jpg" class="d-block w-100" alt="...">
-                  <div class="carousel-caption d-none d-md-block">
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img src="./src/img/Carousel/image-3.jpg" class="d-block w-100" alt="...">
-                  <div class="carousel-caption d-none d-md-block">
-                  </div>
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
             </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="./src/img/Carousel/image-2.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./src/img/Carousel/image-3.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+              </div>
+            </div>
+          </div>
       </div>
-    </div>
+     </main>
+    <!-- /Carousel -->
+
     <!--  Cont page cambiar mas adelante -->
+    
     <div class="container">
         <div class="row">
             <div class="col-xl-4 col-md-6">
@@ -118,7 +106,71 @@
             </div>
         </div>
     </div>
-    
+
+    <!-- footer --> 
+    <footer class="footer-all footer-end">
+      <div class="container-fluid footer_all">
+        <div class="row">
+          <div class="col-lg-3 col-sm-6">
+            <div class="single-box">
+              <div class="baitw-font">
+                <i class="bi bi-bicycle "class="d-inline-block align-text-top"></i>
+                <span>B A I T W</span>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, reprehenderit.</p>
+              <h3>We Accept</h3>
+              <div class="card-area">
+                <i class="fa-brands fa-cc-visa"></i>
+                <i class="fa-brands fa-cc-mastercard"></i>
+                <i class="fa-solid fa-credit-card"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="single-box">
+              <h2>cards</h2>
+              <ul>
+                <li><a href="#">cards</a></li>
+                <li><a href="#">cards</a></li>
+                <li><a href="#">cards</a></li>
+                <li><a href="#">cards</a></li>
+                <li><a href="#">cards</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="single-box">
+              <h2>cards</h2>
+              <ul>
+                <li><a href="#">cards</a></li>
+                <li><a href="#">cards</a></li>
+                <li><a href="#">cards</a></li>
+                <li><a href="#">cards</a></li>
+                <li><a href="#">cards</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="single-box">
+              <h2>News</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, reiciendis recusandae natus eius enim saepe cumque doloremque at sit dolore!</p>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Enter Your Email..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <span class="input-group-text" id="basic-addon2"><i class="bi bi-envelope"></i></span>
+              </div>
+              <h2>Follow</h2>
+              <p class="socials">
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-square-twitter"></i>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- /Footer -->
+
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
