@@ -56,7 +56,7 @@
                     <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Events</a></li>
                     <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Maintenance</a></li>
                     <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Accessories</a></li>
-                    <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Replace</a></li>
+                    <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Spares</a></li>
                     <li class="nav-item"><a href="./src/php/index_bycle.php" class="me-auto nav-link active color-dark">Bikes</a></li>
                 </ul>
             </div>
@@ -129,16 +129,16 @@
 
     <!-- footer --> 
     <footer class="footer-all footer-end">
-      <div class="container-fluid footer_all">
+      <div class="container footer_all">
         <div class="row">
           <div class="col-lg-3 col-sm-6">
             <div class="single-box">
-              <div class="baitw-font">
+              <div class="baitw-font pb-5">
                 <i class="bi bi-bicycle "class="d-inline-block align-text-top"></i>
                 <span>B A I A T W</span>
               </div>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, reprehenderit.</p>
-              <h3>We Accept</h3>
+              <h3 class="pt-4">We Accept</h3>
               <div class="card-area">
                 <i class="fa-brands fa-cc-visa"></i>
                 <i class="fa-brands fa-cc-mastercard"></i>
