@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B A I T W  | inicio</title>
+    <title>B A I A T W  | inicio</title>
     <!--  Styles  -->
     <link rel="stylesheet" href="./src/css/style_index.css">
     <link rel="stylesheet" href="./src/css/style-preloader.css">
@@ -33,7 +33,7 @@
         <div class="container-fluid">
             <a href="./index.php" class="navbar-brand text-dark" style="cursor: default;">
                 <i class="bi bi-bicycle "class="d-inline-block align-text-top"></i>
-                <span>B A I T W</span>
+                <span>B A I A T W</span>
             </a>
             <!--  Button  -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,11 +75,6 @@
     <!--  Carousel  -->
      <main id="main">
       <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-fad" data-bs-ride="carousel" data-pause="false">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
           <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="10000">
               <img src="./src/img/Carousel/image.jpg" class="d-block w-100" alt="...">
@@ -94,6 +89,21 @@
             <div class="carousel-item">
               <img src="./src/img/Carousel/image-3.jpg" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
+              </div>
+            </div>
+          </div>
+          <div class="overlay">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-md-6 offset-md-6 text-center">
+                  <h1>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-bicycle" viewBox="0 0 16 16">
+                      <path d="M4 4.5a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1v.5h4.14l.386-1.158A.5.5 0 0 1 11 4h1a.5.5 0 0 1 0 1h-.64l-.311.935.807 1.29a3 3 0 1 1-.848.53l-.508-.812-2.076 3.322A.5.5 0 0 1 8 10.5H5.959a3 3 0 1 1-1.815-3.274L5 5.856V5h-.5a.5.5 0 0 1-.5-.5zm1.5 2.443-.508.814c.5.444.85 1.054.967 1.743h1.139L5.5 6.943zM8 9.057 9.598 6.5H6.402L8 9.057zM4.937 9.5a1.997 1.997 0 0 0-.487-.877l-.548.877h1.035zM3.603 8.092A2 2 0 1 0 4.937 10.5H3a.5.5 0 0 1-.424-.765l1.027-1.643zm7.947.53a2 2 0 1 0 .848-.53l1.026 1.643a.5.5 0 1 1-.848.53L11.55 8.623z"/>
+                    </svg>
+                    B A I A T W
+                  </h1>
+                  <span>Bikers Association Industry Around the World</span>
+                </div>
               </div>
             </div>
           </div>
@@ -125,7 +135,7 @@
             <div class="single-box">
               <div class="baitw-font">
                 <i class="bi bi-bicycle "class="d-inline-block align-text-top"></i>
-                <span>B A I T W</span>
+                <span>B A I A T W</span>
               </div>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, reprehenderit.</p>
               <h3>We Accept</h3>
