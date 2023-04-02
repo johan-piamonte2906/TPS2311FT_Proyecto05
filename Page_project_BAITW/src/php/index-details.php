@@ -18,52 +18,50 @@
         exit;
     } else {
         
-        $token_tmp = hash_hmac('sha1', $id, KEY_TOKEN);
+      $token_tmp = hash_hmac('sha1', $id, KEY_TOKEN);
         if($token == $token_tmp){
-            $sql = $con->Prepare("SELECT count(id) FROM products WHERE id=? AND activo=1");
-            $sql->execute([$id]);
+          $sql = $con->Prepare("SELECT count(id) FROM products WHERE id=? AND activo=1");
+          $sql->execute([$id]);
             if($sql->fetchColumn() > 0){ 
-                $sql = $con->Prepare("SELECT nombres, descrip, precio, descuento FROM products WHERE id=? AND activo=1 LIMIT 1");
-                $sql->execute([$id]);
-                $row = $sql->fetch(PDO::FETCH_ASSOC);
-                $nombres = $row['nombres'];
-                $descrip = $row['descrip'];
-                $precio = $row['precio'];
-                $descuento = $row['descuento'];
-                $precio_desc = $precio - (($precio * $descuento) / 100);
-                $dir_images = '../img/productos/'. $id .'/';
+              $sql = $con->Prepare("SELECT nombres, descrip, precio, descuento FROM products WHERE id=? AND activo=1 LIMIT 1");
+              $sql->execute([$id]);
+              $row = $sql->fetch(PDO::FETCH_ASSOC);
+              $nombres = $row['nombres'];
+              $descrip = $row['descrip'];
+              $precio = $row['precio'];
+              $descuento = $row['descuento'];
+              $precio_desc = $precio - (($precio * $descuento) / 100);
+              $dir_images = '../img/productos/'. $id .'/';
                 
-                $rutaImg = $dir_images . 'index.jpg';
+              $rutaImg = $dir_images . 'index.jpg';
 
                 if(!file_exists($rutaImg)){
                     $rutaImg = '../img/no-photo.jpg';
                 }
 
                 $imagenes = array();
-                    if(file_exists($dir_images)){
-                        $dir = dir($dir_images);
+                  if(file_exists($dir_images)){
+                      $dir = dir($dir_images);
         
-                        while(($archivo = $dir->read()) != false){
-                            if($archivo != 'index.jpg' && (strpos($archivo,'jpg') || strpos($archivo, 'jpeg'))){
-                                $imagenes[] = $dir_images . $archivo;
-                            }
+                      while(($archivo = $dir->read()) != false){
+                        if($archivo != 'index.jpg' && (strpos($archivo,'jpg') || strpos($archivo, 'jpeg'))){
+                          $imagenes[] = $dir_images . $archivo;
                         }
-                        $dir->close();
+                      }
+                      $dir->close();
                     }
             }
             
         } else {
-            echo '
-                <script>
-                    alert("Error al precesar");
-                    window.location.href = "./index_bycle.php";
-                </script>
-            ';
-            exit;
+          echo '
+              <script>
+                  alert("Error al precesar");
+                  window.location.href = "./index_bycle.php";
+              </script>
+          ';
+          exit;
         }
-    }
-
-  
+    }  
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +70,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B A I A T W  | inicio</title>
+    <title>B A I A T W  | inicio </title>
     <!--  Styles  -->
     <link rel="stylesheet" href="../css/style_index.css">
     <link rel="stylesheet" href="../css/style_products.css">
@@ -90,91 +88,94 @@
 <body>
 
   <!-- Loader -->
-  <div class="lds-ring loader" id="loader">
+    <div class="lds-ring loader" id="loader">
       <div></div>
       <div></div>
       <div></div>
       <div></div>
     </div>
+  <!-- /Loader -->
 
-    <!--  Nav  -->
+  <!--  Nav  -->
     <nav class="navbar navbar-expand-md fondo-all" id="backgronud-all">
-        <div class="container-fluid">
-            <a href="../../index.php" class="navbar-brand text-dark" style="cursor: default;">
-                <i class="bi bi-bicycle "class="d-inline-block align-text-top"></i>
-                <span>B A I A T W</span>
-            </a>
-            <!--  Button  -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: 1px solid black;">
-                <!-- <span class="navbar-toggler-icon bg-secondary"></span> -->
-                <i class="navbar-toggle-icon bi bi-list"></i>
-              </button>
+      <div class="container-fluid">
+        <a href="../../index.php" class="navbar-brand text-dark" style="cursor: default;">
+          <i class="bi bi-bicycle "class="d-inline-block align-text-top"></i>
+          <span>B A I A T W</span>
+        </a>
+          <!--  Button  -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: 1px solid black;">
+          <!-- <span class="navbar-toggler-icon bg-secondary"></span> -->
+          <i class="navbar-toggle-icon bi bi-list"></i>
+        </button>
 
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <nav class="navbar d-md-none sticky-md">
-                            <div class="container-fluid">
-                                <form class="d-flex">
-                                    <input class="form-control me-2 d-flex p-2" type="search" placeholder="Search" aria-label="Search">
-                                    <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
-                                </form>
-                            </div>
-                        </nav>
-                    </li>
-                    <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Events</a></li>
-                    <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Maintenance</a></li>
-                    <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Accessories</a></li>
-                    <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Replace</a></li>
-                    <li class="nav-item"><a href="./index_bycle.php" class="me-auto nav-link active color-dark">Bikes</a></li>
-                </ul>
-            </div>
-
-            <nav class="navbar d-none d-md-inline-block">
-                <div class="container-fluid">
-                  <form class="d-flex" >
-                    <a href="#" type="button" class="btn btn-dark position-relative me-4 d-md-none d-xl-block">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                      </svg>                      
-                      <span id="num-cart" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">
-                        
-                      </span>
-                    </a>
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light" type="submit"><i class="bi bi-search color-white"></i></button>
-                  </form>
-                </div>
-              </nav>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                  <nav class="navbar d-md-none sticky-md">
+                      <div class="container-fluid">
+                          <form class="d-flex">
+                              <input class="form-control me-2 d-flex p-2" type="search" placeholder="Search" aria-label="Search">
+                              <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+                          </form>
+                      </div>
+                  </nav>
+              </li>
+              <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Events</a></li>
+              <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Maintenance</a></li>
+              <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Accessories</a></li>
+              <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Replace</a></li>
+              <li class="nav-item"><a href="./index_bycle.php" class="me-auto nav-link active color-dark">Bikes</a></li>
+          </ul>
         </div>
-    </nav>
-    <!-- /Nav -->
 
-    <!--  Cont page  -->
+        <nav class="navbar d-none d-md-block">
+          <div class="container-fluid">
+            <form class="d-flex">
+              <a href="#" type="button" class="btn btn-dark position-relative me-4 d-md-none d-xl-block">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>                  
+                <span id="num_cart" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">
+                </span>
+              </a>
+                <!-- <a href="#" class="btn btn-dark me-4 d-md-none d-xl-block" style="width: 50%;" >
+                  <span id="num_cart" class="badge bg-secondary" style="margin-left: 8px;"></span>
+                </a> -->
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit"><i class="bi bi-search color-white"></i></button>
+            </form>
+          </div>
+        </nav>
+      </div>
+    </nav>    
+  <!-- /Nav -->
+
+  <!--  Cont page  -->
     <main>
       <div class="container pt-4">
         <div class="row">
-            <div class="col-md-6 order-md-1">
-                <div id="carouselImages" class="carousel slide" data-bs-ride="carousel">
-                   <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="<?php echo $rutaImg; ?>" class="d-block w-100">
-                        </div>
-                        <?php foreach($imagenes as $img) { ?>
-                            <div class="carousel-item">
-                                <img src="<?php echo $img; ?>" class="d-block w-100">
-                            </div>
-                        <?php } ?>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselImages" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselImages" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
+          <div class="col-md-6 order-md-1">
+            <div id="carouselImages" class="carousel slide" data-bs-ride="carousel">
+             <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="<?php echo $rutaImg; ?>" class="d-block w-100">
+                  </div>
+                  <?php foreach($imagenes as $img) { ?>
+                    <div class="carousel-item">
+                      <img src="<?php echo $img; ?>" class="d-block w-100">
+                    </div>
+                  <?php } ?>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselImages" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselImages" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
+          </div>
         </div>
         <div class="col-md-6 order-md-2">
             <h2><?php echo $nombres; ?></h2>
@@ -192,14 +193,15 @@
             <?php } ?>
             <p class="lead"><?php echo $descrip; ?></p>
             <div class="d-grid gap-3 col-10 mx-auto pb-4 pt-3">
-                <button class="btn btn-primary" type="button">Comprar ahora</button>
-                <button class="btn btn-outline-primary" onclick="addProducto(<?php echo $id; ?>, '<?php echo $token_tmp; ?>' )">Agregar al carrito</button>
+              <button class="btn btn-primary" type="button">Comprar ahora</button>
+              <button class="btn btn-outline-primary" onclick="addProducto(<?php echo $id; ?>, '<?php echo $token_tmp; ?>' )">Agregar al carrito</button>
             </div>
         </div>
       </div>
     </main>
+  <!-- /Cont page -->
 
-    <!-- footer --> 
+  <!-- footer --> 
     <footer class="footer-all footer-end">
       <div class="container footer_all">
         <div class="row">
@@ -260,9 +262,13 @@
           </div>
         </div>
       </div>
+      <div class="container text-center pt-5">
+        <p style="color:white;">Copyright© <b> S S W D | B A I A T W </b></p>
+      </div>
     </footer>
-    <!-- /Footer -->
+  <!-- /Footer -->
 
+  <!-- Javascript -->
     <script src="../js/app-carritoCompras.js"></script>
     <script src="../js/app-loader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

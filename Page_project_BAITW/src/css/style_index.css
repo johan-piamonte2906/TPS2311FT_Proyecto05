@@ -15,17 +15,17 @@
     background: linear-gradient(180deg, rgba(34,193,195,1) 0%, rgba(4,0,85,1) 76%);
 }
 
-.footer_all{
+/* .footer_all{
     margin: 10px 10px 10px 10px;
-}
+} */
 
 .footer-all .single-box ul li{
     list-style: none;
 }
 
-.footer-end{
+/* .footer-end{
     padding: 85px 0;
-}
+} */
 
 .single-box p{
     color: #fff;
@@ -83,7 +83,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 2;
     color: #fff;
 
 }

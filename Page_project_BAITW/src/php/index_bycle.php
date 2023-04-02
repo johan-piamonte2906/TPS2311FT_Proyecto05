@@ -19,7 +19,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B A I A T W  | Bikes</title>
+    <title>B A I A T W  | Bikes </title>
     <!--  Styles  -->
     <link rel="stylesheet" href="../css/style_index.css">
     <link rel="stylesheet" href="../css/style_products.css">
@@ -37,27 +37,28 @@
 <body>
 
   <!-- Loader -->
-  <div class="lds-ring loader" id="loader">
+    <div class="lds-ring loader" id="loader">
       <div></div>
       <div></div>
       <div></div>
       <div></div>
     </div>
+  <!-- /Loader -->
 
-    <!--  Nav  -->
+  <!--  Nav  -->
     <nav class="navbar navbar-expand-md fondo-all" id="backgronud-all">
-        <div class="container-fluid">
-            <a href="../../index.php" class="navbar-brand text-dark" style="cursor: default;">
-                <i class="bi bi-bicycle "class="d-inline-block align-text-top"></i>
-                <span>B A I A T W</span>
-            </a>
+      <div class="container-fluid">
+        <a href="../../index.php" class="navbar-brand text-dark" style="cursor: default;">
+          <i class="bi bi-bicycle "class="d-inline-block align-text-top"></i>
+          <span>B A I A T W</span>
+        </a>
             <!--  Button  -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: 1px solid black;">
-                <!-- <span class="navbar-toggler-icon bg-secondary"></span> -->
-                <i class="navbar-toggle-icon bi bi-list"></i>
-              </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: 1px solid black;">
+              <!-- <span class="navbar-toggler-icon bg-secondary"></span> -->
+              <i class="navbar-toggle-icon bi bi-list"></i>
+        </button>
 
-            <div class="collapse navbar-collapse" id="menu">
+        <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <nav class="navbar d-md-none sticky-md">
@@ -75,27 +76,27 @@
                     <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Replace</a></li>
                     <li class="nav-item"><a href="./index_bycle.php" class="me-auto nav-link active color-dark">Bikes</a></li>
                 </ul>
-            </div>
-
-            <nav class="navbar d-none d-md-block">
-                <div class="container-fluid">
-                  <form class="d-flex">
-                      <a href="#" class="btn btn-dark me-4 d-md-none d-xl-block" style="width: 50%;" >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                        </svg>
-                        <span id="num_cart" class="badge bg-secondary" style="margin-left: 8px;"></span>
-                      </a>
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light" type="submit"><i class="bi bi-search color-white"></i></button>
-                  </form>
-                </div>
-              </nav>
         </div>
-    </nav>
-    <!-- /Nav -->
 
-    <!--  Cont page cambiar mas adelante -->
+        <nav class="navbar d-none d-md-block">
+          <div class="container-fluid">
+            <form class="d-flex">
+                <a href="#" class="btn btn-dark me-4 d-md-none d-xl-block" style="width: 50%;" >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                  </svg>
+                  <span id="num_cart" class="badge bg-secondary" style="margin-left: 8px;"></span>
+                </a>
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit"><i class="bi bi-search color-white"></i></button>
+            </form>
+          </div>
+        </nav>
+      </div>
+    </nav>
+  <!-- /Nav -->
+
+  <!--  Cont page  -->
     <main>
       <div class="container pt-4">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 pb-4">
@@ -103,7 +104,6 @@
             <div class="col">
               <div class="card shadow-sm">
                 <?php
-
                   $id = $row['id'];
                   $imagen = "../img/productos/". $id . "/index.jpg"; 
 
@@ -129,8 +129,9 @@
         </div>
       </div>
     </main>
+  <!-- /Cont page -->
 
-    <!-- footer --> 
+  <!-- footer --> 
     <footer class="footer-all footer-end">
       <div class="container footer_all">
         <div class="row">
@@ -191,8 +192,13 @@
           </div>
         </div>
       </div>
+      <div class="container text-center pt-5">
+        <p style="color:white;">Copyright© <b> S S W D | B A I A T W </b></p>
+      </div>
     </footer>
-    <!-- /Footer -->
+  <!-- /Footer -->
+
+  <!-- javascript -->
     <script src="../js/app-loader.js"></script>
     <script src="../js/app-carritoCompras.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
