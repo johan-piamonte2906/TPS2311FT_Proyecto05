@@ -30,44 +30,44 @@
   <!-- /loader -->
 
   <!--  Nav  -->
-    <nav class="navbar navbar-expand-md fondo-all" id="backgronud-all">
+    <nav class="navbar navbar-expand-md fondo-all pt-2 pb-2" id="backgronud-all">
       <div class="container-fluid">
-        <a href="./index.php" class="navbar-brand text-dark" style="cursor: default;">
+        <a href="./index.php" class="navbar-brand text-dark">
           <i class="bi bi-bicycle "class="d-inline-block align-text-top"></i>
           <span>B A I A T W</span>
         </a>
         <!--  Button  -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <!-- <span class="navbar-toggler-icon bg-secondary"></span> -->
-              <i class="navbar-toggle-icon bi bi-list"></i>
+          <!-- <span class="navbar-toggler-icon bg-secondary"></span> -->
+          <i class="navbar-toggle-icon bi bi-list"></i>
         </button>
 
         <div class="collapse navbar-collapse" id="menu">
-              <ul class="navbar-nav">
-                  <li class="nav-item dropdown">
-                    <nav class="navbar d-md-none sticky-md">
-                      <div class="container-fluid">
-                        <form class="d-flex">
-                          <input class="form-control me-2 d-flex p-2" type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
-                        </form>
-                      </div>
-                    </nav>
-                  </li>
-                  <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Events</a></li>
-                  <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Maintenance</a></li>
-                  <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Accessories</a></li>
-                  <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Spares</a></li>
-                  <li class="nav-item"><a href="./src/php/index_bycle.php" class="me-auto nav-link active color-dark">Bikes</a></li>
-              </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <nav class="navbar d-md-none sticky-md">
+                <div class="container-fluid">
+                  <form class="d-flex">
+                    <input class="form-control me-2 d-flex p-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+                  </form>
+                </div>
+              </nav>
+            </li>
+            <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Events</a></li>
+            <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Maintenance</a></li>
+            <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Accessories</a></li>
+            <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Spares</a></li>
+            <li class="nav-item"><a href="./src/php/index_bycle.php" class="me-auto nav-link active color-dark">Bikes</a></li>
+          </ul>
         </div>
         <nav class="navbar d-none d-md-inline-block">
-              <div class="container-fluid">
-                <form class="d-flex" >
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-light" type="submit"><i class="bi bi-search color-white"></i></button>
-                </form>
-              </div>
+          <div class="container-fluid">
+            <form class="d-flex" >
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit"><i class="bi bi-search color-white"></i></button>
+            </form>
+          </div>
         </nav>
       </div>
     </nav>
@@ -129,7 +129,7 @@
   <!-- /Cont page -->
 
   <!-- footer --> 
-    <footer class="footer-all footer-end">
+    <footer class="footer-all footer-end pt-5 pb-4">
       <div class="container footer_all">
         <div class="row">
           <div class="col-lg-3 col-sm-6">

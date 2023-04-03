@@ -10,10 +10,10 @@
 
     if($id == ''  ||  $token == ''){
         echo '
-            <script>
-                alert("Error al precesar");
-                window.location.href = "./index_bycle.php";
-            </script>
+          <script>
+            alert("Error al precesar");
+            window.location.href = "./index_bycle.php";
+          </script>
         ';
         exit;
     } else {
@@ -54,10 +54,10 @@
             
         } else {
           echo '
-              <script>
-                  alert("Error al precesar");
-                  window.location.href = "./index_bycle.php";
-              </script>
+            <script>
+              alert("Error al precesar");
+              window.location.href = "./index_bycle.php";
+            </script>
           ';
           exit;
         }
@@ -99,10 +99,11 @@
   <!--  Nav  -->
     <nav class="navbar navbar-expand-md fondo-all" id="backgronud-all">
       <div class="container-fluid">
-        <a href="../../index.php" class="navbar-brand text-dark" style="cursor: default;">
+        <a href="../../index.php" class="navbar-brand text-dark">
           <i class="bi bi-bicycle "class="d-inline-block align-text-top"></i>
           <span>B A I A T W</span>
         </a>
+
           <!--  Button  -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: 1px solid black;">
           <!-- <span class="navbar-toggler-icon bg-secondary"></span> -->
@@ -111,37 +112,36 @@
 
         <div class="collapse navbar-collapse" id="menu">
           <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                  <nav class="navbar d-md-none sticky-md">
-                      <div class="container-fluid">
-                          <form class="d-flex">
-                              <input class="form-control me-2 d-flex p-2" type="search" placeholder="Search" aria-label="Search">
-                              <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
-                          </form>
-                      </div>
-                  </nav>
-              </li>
-              <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Events</a></li>
-              <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Maintenance</a></li>
-              <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Accessories</a></li>
-              <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Replace</a></li>
-              <li class="nav-item"><a href="./index_bycle.php" class="me-auto nav-link active color-dark">Bikes</a></li>
+            <li class="nav-item dropdown">
+              <nav class="navbar d-md-none sticky-md">
+                <div class="container-fluid">
+                  <form class="d-flex">
+                      <input class="form-control me-2 d-flex p-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+                  </form>
+                </div>
+              </nav>
+            </li>
+            <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Events</a></li>
+            <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Maintenance</a></li>
+            <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Accessories</a></li>
+            <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Replace</a></li>
+            <li class="nav-item"><a href="./index_bycle.php" class="me-auto nav-link active color-dark">Bikes</a></li>
           </ul>
         </div>
 
         <nav class="navbar d-none d-md-block">
           <div class="container-fluid">
             <form class="d-flex">
-              <a href="#" type="button" class="btn btn-dark position-relative me-4 d-md-none d-xl-block">
+              <a href="./carrito-compras/index-carrito.php" type="button" class="btn btn-dark position-relative me-4 d-md-none d-xl-block">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                 </svg>                  
-                <span id="num_cart" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">
+                <span id="num_cart" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">        
+                  <?php echo $num_cart; ?>
+                <span class="visually-hidden">numero de articulos</span>
                 </span>
               </a>
-                <!-- <a href="#" class="btn btn-dark me-4 d-md-none d-xl-block" style="width: 50%;" >
-                  <span id="num_cart" class="badge bg-secondary" style="margin-left: 8px;"></span>
-                </a> -->
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-light" type="submit"><i class="bi bi-search color-white"></i></button>
             </form>
@@ -153,11 +153,19 @@
 
   <!--  Cont page  -->
     <main>
-      <div class="container pt-4">
-        <div class="row">
-          <div class="col-md-6 order-md-1">
-            <div id="carouselImages" class="carousel slide" data-bs-ride="carousel">
-             <div class="carousel-inner">
+      <div class="container-fluid pt-3">
+        <a href="./index_bycle.php" style="color: black; text-decoration:none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+            <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+          </svg>
+          Regresar
+        </a>
+      </div>
+      <div class="container pt-5 pb-5">
+      <div class="row">
+        <div class="col-md-6 order-md-1">
+          <div id="carouselImages" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
                   <div class="carousel-item active">
                     <img src="<?php echo $rutaImg; ?>" class="d-block w-100">
                   </div>
@@ -178,31 +186,31 @@
           </div>
         </div>
         <div class="col-md-6 order-md-2">
-            <h2><?php echo $nombres; ?></h2>
+          <h2><?php echo $nombres; ?></h2>
 
-            <?php if($descuento > 0)  { ?>
-                <p><del><?php echo MONEDA . number_format($precio, 3, '.', ','); ?></del></p>
-                <h2>
-                    <?php echo MONEDA . number_format($precio_desc, 3, '.', ','); ?>
-                    <small class="text-success"><?php echo $descuento; ?>% descuento</small>
-                </h2>
-            <?php }else { ?>
+          <?php if($descuento > 0)  { ?>
+              <p><del><?php echo MONEDA . number_format($precio, 3, '.', ','); ?></del></p>
+              <h2>
+                  <?php echo MONEDA . number_format($precio_desc, 3, '.', ','); ?>
+                  <small class="text-success"><?php echo $descuento; ?>% descuento</small>
+              </h2>
+          <?php }else { ?>
 
-                <h2><?php echo MONEDA . number_format($precio, 3, '.', ','); ?></h2>
+              <h2><?php echo MONEDA . number_format($precio, 3, '.', ','); ?></h2>
 
-            <?php } ?>
-            <p class="lead"><?php echo $descrip; ?></p>
-            <div class="d-grid gap-3 col-10 mx-auto pb-4 pt-3">
-              <button class="btn btn-primary" type="button">Comprar ahora</button>
-              <button class="btn btn-outline-primary" onclick="addProducto(<?php echo $id; ?>, '<?php echo $token_tmp; ?>' )">Agregar al carrito</button>
-            </div>
+          <?php } ?>
+          <p class="lead"><?php echo $descrip; ?></p>
+          <div class="d-grid gap-3 col-10 mx-auto pb-4 pt-3">
+            <button class="btn btn-primary" type="button">Comprar ahora</button>
+            <button class="btn btn-outline-primary" onclick="addProducto(<?php echo $id; ?>, '<?php echo $token_tmp; ?>' )">Agregar al carrito</button>
+          </div>
         </div>
       </div>
     </main>
   <!-- /Cont page -->
 
   <!-- footer --> 
-    <footer class="footer-all footer-end">
+    <footer class="footer-all footer-end pt-5 pb-4">
       <div class="container footer_all">
         <div class="row">
           <div class="col-lg-3 col-sm-6">

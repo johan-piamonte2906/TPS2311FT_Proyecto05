@@ -1,8 +1,8 @@
 function addProducto(id, token){
-    let url = '../php/carrito-compras/index-carrito.php';
-    let formData = new FormData();
-    formData.append('id', id);
-    formData.append('token', token);
+    let url = '../php/carrito-compras/index-carrito.php'
+    let formData = new FormData()
+    formData.append('id', id)
+    formData.append('token', token)
 
     fetch(url,{
         method: 'POST',
@@ -11,8 +11,8 @@ function addProducto(id, token){
     }).then(response => response.json())
     .then(data => {
         if (data.ok) {
-                let elemento = document.getElementById("num_cart");
-                elemento.innerHTML = data.numero;
+            let elemento = document.getElementById("num_cart")
+            elemento.innerHTML = data.numero
         }
     })
 };

@@ -1,6 +1,5 @@
 <?php 
 
-
     require '../Conexiones/config.php.';
 
     if(isset($_POST['id'])) {
@@ -12,13 +11,13 @@
 
         if($token == $token_tmp){
 
-            if(isset(S_SESSION['carrito']['productos']['id'])){
-                S_SESSION['carrito']['productos']['id'] += 1;
+            if(isset($_SESSION['carrito']['productos'][$id])){
+                $_SESSION['carrito']['productos'][$id] += 1;
             }else{
-                S_SESSION['carrito']['productos']['id'] = 1;
+                $_SESSION['carrito']['productos'][$id] = 1;
             }
 
-            $datos['numero']= count(S_SESSION['carrito']['productos']);
+            $datos['numero'] = count($_SESSION['carrito']['productos']);
             $datos['ok'] = true;
         }else{
             $datos['ok'] = false ;
@@ -28,4 +27,6 @@
         $datos['ok'] = false ;
     }
 
-echo json_encode($datos);
+    echo json_encode($datos);
+
+?>
