@@ -10,7 +10,7 @@
   $sql->execute();
   $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-  print_r($_SESSION);
+ // print_r($_SESSION);
 
 ?>
 

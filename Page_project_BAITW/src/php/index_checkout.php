@@ -109,6 +109,14 @@
   <!-- /Nav -->
 
   <!--  Cont page  -->
+    <div class="container-fluid pt-4 pb-2">
+      <a href="./index_bycle.php" style="color: black; text-decoration:none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+          <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+        </svg>
+        Regresar
+      </a>  
+    </div>
     <main>
       <div class="container pt-5 pb-5">
         <div class="table-responsive">
@@ -141,12 +149,12 @@
                             <td><?php echo $nombre?></td>
                             <td><?php echo MONEDA . number_format($precio_desc, 3, '.', ','); ?></td>
                             <td>
-                                <input type="number" min="1" max="5" step="1" value="<?php echo $cantidad; ?>" size="5" id="cantidad_<?php echo $_id; ?>" onchange="actualizarCantidad(this.value, <?php echo $_id; ?>)">
+                                <input type="number" min="1" max="10" step="1" value="<?php echo $cantidad; ?>" size="5" id="cantidad_<?php echo $_id; ?>" onchange="actualizarCantidad(this.value, <?php echo $_id; ?>)">
                             </td>
                             <td>
                                 <div id="subtotal_<?php echo $_id; ?>" name="subtotal[]"><?php echo MONEDA . number_format($subtotal, 3, '.', ','); ?></div>
                             </td>
-                            <td><a href="#" id="eliminar" class="btn btn-warning btn-sm" data-bs-id="<?php echo $_id; ?>" data-bs-toggle="modal" data-bs-target="eliminaModal"><i class="fa-solid fa-trash"></i></a></td>
+                            <td><a href="#" id="eliminar" class="btn btn-danger btn-sm" data-bs-id="<?php echo $_id; ?>" data-bs-toggle="modal" data-bs-target="#eliminaModal"><i class="fa-solid fa-trash"></i></a></td>
                         </tr>
                         <?php }?>
                         <tr>
@@ -166,6 +174,24 @@
         </div>
       </div>
     </main>
+    <!-- Modal -->
+    <div class="modal fade" id="eliminaModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="eliminaModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="eliminaModalLabel">Alerta</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ¿Desea eliminar el producto de la lista?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button id="btn-eliminar" type="button" class="btn btn-danger" onclick="eliminar()" >Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
   <!-- /Cont page -->
 
   <!-- footer --> 
