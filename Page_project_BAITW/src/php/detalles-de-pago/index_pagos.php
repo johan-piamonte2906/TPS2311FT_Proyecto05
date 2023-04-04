@@ -1,7 +1,7 @@
 <?php
 
-  require './Conexiones/config.php';
-  require './Conexiones/database.php';
+  require '../Conexiones/config.php';
+  require '../Conexiones/database.php';
 
   $db = new Database();
   $con = $db->conectar();
@@ -28,20 +28,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B A I A T W  | Bikes </title>
+    <title>B A I A T W  | Pagos </title>
     <!--  Styles  -->
-    <link rel="stylesheet" href="../css/style_index.css">
-    <link rel="stylesheet" href="../css/style_products.css">
-    <link rel="stylesheet" href="../css/style-preloader.css">
+    <link rel="stylesheet" href="../../css/style_index.css">
+    <link rel="stylesheet" href="../../css/style_products.css">
+    <link rel="stylesheet" href="../../css/style-preloader.css">
     <!--  Bootstrap 5  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!--  Icons Bootstrap  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <!--  Fav-icon  -->
-    <link rel="shortcut icon" href="../img/fav-icons/favicon-bicycle.png" type="image/m-icon">
+    <link rel="shortcut icon" href="../../img/fav-icons/favicon-bicycle.png" type="image/m-icon">
     <!-- FONT AWEASOME -->
 	  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- api Paypal -->
+    <script src="https://www.paypal.com/sdk/js?client-id=<?php echo CLIENT_ID; ?>&currency=<?php echo CURRENCY; ?>"></script>
 </head>
 <body>
 
@@ -57,7 +59,7 @@
   <!--  Nav  -->
     <nav class="navbar navbar-expand-md fondo-all" id="backgronud-all">
       <div class="container-fluid">
-        <a href="../../index.php" class="navbar-brand text-dark">
+        <a href="../../../index.php" class="navbar-brand text-dark">
           <i class="bi bi-bicycle "class="d-inline-block align-text-top"></i>
           <span>B A I A T W</span>
         </a>
@@ -83,14 +85,14 @@
                     <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Maintenance</a></li>
                     <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Accessories</a></li>
                     <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Replace</a></li>
-                    <li class="nav-item"><a href="./index_bycle.php" class="me-auto nav-link active color-dark">Bikes</a></li>
+                    <li class="nav-item"><a href="../index_bycle.php" class="me-auto nav-link active color-dark">Bikes</a></li>
                 </ul>
         </div>
 
         <nav class="navbar d-none d-md-block">
           <div class="container-fluid">
             <form class="d-flex">
-              <a href="./index_checkout.php" type="button" class="btn btn-dark position-relative me-4 d-md-none d-xl-block">
+              <a href="../index_checkout.php" type="button" class="btn btn-dark position-relative me-4 d-md-none d-xl-block">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                 </svg>                  
@@ -111,81 +113,58 @@
   <!--  Cont page  -->
     <main>
       <div class="container pt-5 pb-5">
-        <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Producto</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Subtotal</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php if($lista_carrito == null){
-                        echo '<tr><td colspan="5" class="text-center"><b><div class="alert alert-success" role="alert">
-                        El Carrito Esta vacio <a href="./index_bycle.php" class="alert-link">Agrega cosas</a>, Para continuar
-                      </div></b></td></tr>';
-                    }else {
-                        $total = 0;
-                        foreach($lista_carrito as $producto){
-                            $_id = $producto['id'];
-                            $nombre = $producto['nombres'];
-                            $precio = $producto['precio'];
-                            $descuento = $producto['descuento'];
-                            $cantidad = $producto['cantidad'];
-                            $precio_desc = $precio - (($precio * $descuento) / 100);
-                            $subtotal = $cantidad * $precio_desc;
-                            $total += $subtotal;
-                        ?>
-                        <tr>
-                            <td><?php echo $nombre?></td>
-                            <td><?php echo MONEDA . number_format($precio_desc, 3, '.', ','); ?></td>
-                            <td>
-                                <input type="number" min="1" max="10" step="1" value="<?php echo $cantidad; ?>" size="5" id="cantidad_<?php echo $_id; ?>" onchange="actualizarCantidad(this.value, <?php echo $_id; ?>)">
-                            </td>
-                            <td>
-                                <div id="subtotal_<?php echo $_id; ?>" name="subtotal[]"><?php echo MONEDA . number_format($subtotal, 3, '.', ','); ?></div>
-                            </td>
-                            <td><a href="#" id="eliminar" class="btn btn-danger btn-sm" data-bs-id="<?php echo $_id; ?>" data-bs-toggle="modal" data-bs-target="#eliminaModal"><i class="fa-solid fa-trash"></i></a></td>
-                        </tr>
-                        <?php }?>
-                        <tr>
-                            <td colspan="3"></td>
-                            <td colspan="2">
-                                <p class="h3" id="total"><?php echo MONEDA . number_format($total, 3, '.', ','); ?></p>
-                            </td>
-                        </tr>
-                </tbody>
-                <?php } ?>
-            </table>
-        </div>
         <div class="row">
-            <div class="col-md-5 offset-md-7 d-grid gap-2">
-                <button class="btn btn-primary btn-lg">Realizar pago</button>
+            <div class="col-6">
+                <h2>Detalles de productos</h2>
+                <div class="" id="paypal-button-container"></div>
+            </div>
+            <div class="col-6">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Subtotal</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php if($lista_carrito == null){
+                                echo '<tr><td colspan="5" class="text-center"><b><div class="alert alert-success" role="alert">
+                                El Carrito Esta vacio <a href="./index_bycle.php" class="alert-link">Agrega cosas</a>, Para continuar
+                            </div></b></td></tr>';
+                            }else {
+                                $total = 0;
+                                foreach($lista_carrito as $producto){
+                                    $_id = $producto['id'];
+                                    $nombre = $producto['nombres'];
+                                    $precio = $producto['precio'];
+                                    $descuento = $producto['descuento'];
+                                    $cantidad = $producto['cantidad'];
+                                    $precio_desc = $precio - (($precio * $descuento) / 100);
+                                    $subtotal = $cantidad * $precio_desc;
+                                    $total += $subtotal;
+                                ?>
+                                <tr>
+                                    <td><?php echo $nombre?></td>                                    
+                                    <td>
+                                        <div id="subtotal_<?php echo $_id; ?>" name="subtotal[]"><?php echo MONEDA . number_format($subtotal, 3, '.', ','); ?></div>
+                                    </td>                                    
+                                </tr>
+                                <?php }?>
+                                <tr>                                    
+                                    <td colspan="5">
+                                        <p class="h3 text-center" id="total"><?php echo MONEDA . number_format($total, 3, '.', ','); ?></p>
+                                    </td>
+                                </tr>
+                        </tbody>
+                        <?php } ?>
+                    </table>
+                </div>
             </div>
         </div>
       </div>
     </main>
-    <!-- Modal -->
-    <div class="modal fade" id="eliminaModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="eliminaModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="eliminaModalLabel">Alerta</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            ¿Desea eliminar el producto de la lista?
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button id="btn-eliminar" type="button" class="btn btn-danger" onclick="eliminar()" >Eliminar</button>
-          </div>
-        </div>
-      </div>
-    </div>
   <!-- /Cont page -->
 
   <!-- footer --> 
@@ -256,8 +235,9 @@
   <!-- /Footer -->
 
   <!-- javascript -->
-    <script src="../js/app-loader.js"></script>
-    <script src="../js/app-carritoCompras.js"></script>
+  <script src="../../js/api-paypal.js"></script>
+    <script src="../../js/app-loader.js"></script>
+    <script src="../../js/app-carritoCompras.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
