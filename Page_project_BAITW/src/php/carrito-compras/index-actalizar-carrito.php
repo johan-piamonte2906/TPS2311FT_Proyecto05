@@ -12,13 +12,14 @@ require '../Conexiones/database.php';
             $cantidad = isset($_POST['cantidad']) ? $_POST['cantidad'] : 0 ;
             $respuesta = agregar($id, $cantidad);
     
-            if($respuesta > null){
+            if($respuesta > 0){
                 $datos['ok'] = true;
             }else{
                 $datos['ok'] = false;
             }
             
-            $datos['ok'] = MONEDA . number_format($respuesta, 3, '.', ','); 
+            $datos['sub'] = MONEDA . number_format($respuesta, 3, '.', ','); 
+            
         }else if($action == 'eliminar'){
             $datos['ok'] = eliminar($id);
         } else{
@@ -39,7 +40,7 @@ function agregar($id, $cantidad){
 
             $db = new Database();
             $con = $db->conectar();
-            $sql = $con->Prepare("SELECT precio, descuento FROM products WHERE id=? AND activo=1 LIMIT 1");
+            $sql = $con->Prepare("SELECT precio, descuento FROM products WHERE id=? AND activo=1");
             $sql->execute([$id]);
             $row = $sql->fetch(PDO::FETCH_ASSOC);
             $precio = $row['precio'];

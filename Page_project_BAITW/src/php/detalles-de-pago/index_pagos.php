@@ -11,11 +11,14 @@
   $lista_carrito = array();
 
     if($productos != null){
-        foreach($productos as $clave => $cantidad){
-            $sql = $con->Prepare("SELECT id, nombres, precio, descuento, $cantidad AS cantidad FROM products WHERE id=? AND activo=1");
-            $sql->execute([$clave]);
-            $lista_carrito[] = $sql->fetch(PDO::FETCH_ASSOC);
-        }
+      foreach($productos as $clave => $cantidad){
+        $sql = $con->Prepare("SELECT id, nombres, precio, descuento, $cantidad AS cantidad FROM products WHERE id=? AND activo=1");
+        $sql->execute([$clave]);
+        $lista_carrito[] = $sql->fetch(PDO::FETCH_ASSOC);
+      }
+    }else{
+      header("location: ../index_checkout.php");
+      exit;
     }
 
 
@@ -42,8 +45,8 @@
     <!-- FONT AWEASOME -->
 	  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- api Paypal -->
-    <script src="https://www.paypal.com/sdk/js?client-id=<?php echo CLIENT_ID; ?>&currency=<?php echo CURRENCY; ?>"></script>
+    <!-- api Paypal solo se puede en EU, MXN etc, No para colombia -->
+    <script src="https://www.paypal.com/sdk/js?client-id=<?php echo CLIENT_ID; ?>"></script>
 </head>
 <body>
 
@@ -129,7 +132,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if($lista_carrito == null){
+                            <?php if($lista_carrito == 0){
                                 echo '<tr><td colspan="5" class="text-center"><b><div class="alert alert-success" role="alert">
                                 El Carrito Esta vacio <a href="./index_bycle.php" class="alert-link">Agrega cosas</a>, Para continuar
                             </div></b></td></tr>';
@@ -234,10 +237,47 @@
     </footer>
   <!-- /Footer -->
 
+
   <!-- javascript -->
-  <script src="../../js/api-paypal.js"></script>
+  <script>
+    paypal.Buttons({
+      style:{
+        color:'blue',
+        shape: 'pill',
+        label: 'pay'
+      },
+      crateOrder: function(data, actions){
+        return actions.order.create({
+          purchase_units:[{
+            amount:{
+              value: <?php echo $total; ?>
+            }
+          }]
+        });
+      },
+      onApprove: function(data, action){
+        action.order.capture().then(function(detalles){
+          console.log(detalles)
+          let url = '../carrito-compras/index-captura.php';
+          return fetch(url,{
+            method: 'post',
+            headers: {
+              'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+              detalles: detalles
+            })
+          })
+        });
+      },
+      onCancel: function(data){
+        alert("Tu orden ah sido cancelada ha sido cancelada")
+        console.log(data)
+      }
+    }).render('#paypal-button-container');
+  </script>
     <script src="../../js/app-loader.js"></script>
-    <script src="../../js/app-carritoCompras.js"></script>
+    <!-- <script src="../../js/app-carritoCompras.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>

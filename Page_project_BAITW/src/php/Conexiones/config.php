@@ -1,6 +1,6 @@
 <?php
 
-define("CLIENT_ID", "AewO6IkM1TGOn9R02-uj5YI1eGsp0DitGhO9ASNpop7_7Aw_lr4G13VwFg4SEoGFZKOLy-7ZINS2RQhn");
+define("CLIENT_ID", "AR5Eg-wA-i9iTLxYVYS7M9LGrO1vVKsC7VjgvqKDFpJS1QtFz_34aJvfILL5oG-sDR0yd4ZfwPxNn6wb");
 define("CURRENCY", "COP");
 define("KEY_TOKEN", "JoHaN-2022*");
 define("MONEDA", "$");

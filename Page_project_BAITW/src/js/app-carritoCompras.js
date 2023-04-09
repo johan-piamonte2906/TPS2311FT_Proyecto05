@@ -7,57 +7,59 @@ function addProducto(id, token){
 
     fetch(url,{
         method: 'POST',
-        body: formData
+        body: formData,
+        mode: 'cors'
     }).then(response => response.json())
     .then(data => {
         if (data.hasOwnProperty('ok') && data.ok) {
             let elemento = document.getElementById("num_cart");
-            let numero = parseInt(data.numero);
-            elemento.innerHTML = numero;
+            elemento.innerHTML = data.numero;
         }
     });
 }
 
-//eliminar
+//eliminar modal
 
 let eliminaModal = document.getElementById('eliminaModal')
-eliminaModal.addEventListener('show.bs.modal', function(event){
+  eliminaModal.addEventListener('show.bs.modal', function(event){
     let button =  event.relatedTarget
     let id = button.getAttribute('data-bs-id')
     let buttonElimina = eliminaModal.querySelector('.modal-footer #btn-eliminar')
     buttonElimina.value =id
-})
+  })
 
 // Modificar carrito
 
 function actualizarCantidad(cantidad, id) {
-    const url = '../php/carrito-compras/index-actalizar-carrito.php';
-    const formData = new FormData();
+    let url = '../php/carrito-compras/index-actalizar-carrito.php';
+    let formData = new FormData();
     formData.append('action', 'agregar');
     formData.append('id', id);
     formData.append('cantidad', cantidad);
   
     fetch(url, {
       method: 'POST',
-      body: formData
+      body: formData,
+      mode: 'cors'
     })
     .then(response => response.json())
     .then(data => {
       if (data.ok) {
-        const divsubtotal = document.getElementById(`subtotal_${id}`);
-        const sub = parseInt(data.sub);
-        divsubtotal.innerHTML = sub;
+
+        let divsubtotal = document.getElementById('subtotal_'+ id);
+        divsubtotal.innerHTML = data.sub;
   
-        let total = 0.0;
-        const subtotals = document.querySelectorAll('.subtotal');
-        subtotals.forEach(subtotal => {
-          total += parseFloat(subtotal.innerHTML.replace(/[$,]/g, ''));
-        });
+        let total = 0.000;
+        let list = document.getElementsByName('subtotal[]');
+        
+        for(let i = 0; i < list.length; i++){
+          total += parseFloat(list[i].innerHTML.replace(/[$,]/g, ''))
+        }
   
         total = new Intl.NumberFormat('eu-US', {
           minimumFractionDigits: 3
-        }).format(total);
-        document.getElementById('total').innerHTML = '<?php echo MONEDA; ?>' + total;
+        }).format(total)
+        document.getElementById('total').innerHTML = '<?php echo MONEDA; ?>' + total
       }
     })
     .catch(error => console.error(error));
@@ -75,7 +77,8 @@ function actualizarCantidad(cantidad, id) {
       
     fetch(url, {
       method: 'POST',
-      body: formData
+      body: formData,
+      mode: 'cors'
     })
     .then(response => response.json())
     .then(data => {
