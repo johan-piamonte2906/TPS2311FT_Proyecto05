@@ -103,7 +103,7 @@
                     </svg>
                     B A I A T W
                   </h1>
-                  <span>Bikers Association Industry Around the World</span>
+                  <span>Bicycle Association Industry Around the World</span>
                 </div>
               </div>
             </div>
