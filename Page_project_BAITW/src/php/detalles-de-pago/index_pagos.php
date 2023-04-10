@@ -267,6 +267,8 @@
             body: JSON.stringify({
               detalles: detalles
             })
+          }).then(function(response){
+            
           })
         });
       },

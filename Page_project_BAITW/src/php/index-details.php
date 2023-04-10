@@ -161,7 +161,7 @@
           Regresar
         </a>
       </div>
-      <div class="container pt-5 pb-5">
+      <div class="container">
       <div class="row">
         <div class="col-md-6 order-md-1">
           <div id="carouselImages" class="carousel slide" data-bs-ride="carousel">
@@ -187,19 +187,19 @@
         </div>
         <div class="col-md-6 order-md-2">
           <h2><?php echo $nombres; ?></h2>
+          <p class="lead"><?php echo $descrip; ?></p>
 
           <?php if($descuento > 0)  { ?>
-              <p><del><?php echo MONEDA . number_format($precio, 3, '.', ','); ?></del></p>
-              <h2>
+              <p class="text-end"><del><?php echo MONEDA . number_format($precio, 3, '.', ','); ?></del></p>
+              <h2 class="text-end">
                   <?php echo MONEDA . number_format($precio_desc, 3, '.', ','); ?>
-                  <small class="text-success"><?php echo $descuento; ?>% descuento</small>
+                  <small class="text-success">-<?php echo $descuento; ?>% <b>Descuento</b></small>
               </h2>
           <?php }else { ?>
 
-              <h2><?php echo MONEDA . number_format($precio, 3, '.', ','); ?></h2>
+              <h2 class="text-end"><?php echo MONEDA . number_format($precio, 3, '.', ','); ?></h2>
 
           <?php } ?>
-          <p class="lead"><?php echo $descrip; ?></p>
           <div class="d-grid gap-3 col-10 mx-auto pb-4 pt-3">
             <button class="btn btn-primary" type="button">Comprar ahora</button>
             <button class="btn btn-outline-primary" onclick="addProducto(<?php echo $id; ?>, '<?php echo $token_tmp; ?>' )">Agregar al carrito</button>

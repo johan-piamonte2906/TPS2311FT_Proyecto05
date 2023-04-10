@@ -119,7 +119,7 @@
                 <img class="d-block w-100" src=" <?php echo $imagen; ?> ">
                 <div class="card-body">
                   <h5 class="card-title"> <?php echo $row['nombres']; ?> </h5>
-                  <p class="card-text">$<?php echo number_format($row['precio'],3, '.', ','); ?></p>
+                  <p class="card-text">$ <b><?php echo number_format($row['precio'],3, '.', ','); ?></b></p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <a href="./index-details.php?id=<?php echo $row['id']; ?>&token=<?php echo hash_hmac('sha1', $row['id'], KEY_TOKEN); ?>" class="btn btn-primary">Detalles</a>
