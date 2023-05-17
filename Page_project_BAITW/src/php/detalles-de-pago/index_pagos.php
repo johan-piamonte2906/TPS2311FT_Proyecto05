@@ -268,7 +268,7 @@
               detalles: detalles
             })
           }).then(function(response){
-            
+            //location.reload()
           })
         });
       },

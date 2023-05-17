@@ -13,7 +13,7 @@ try {
     //Server settings
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
-    //$mail->Host       = 'mail.projectbaitw.05.com';                     //Set the SMTP server to send through
+    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = 'projectbaitw.05@gmail.com';                     //SMTP username
     $mail->Password   = '3227238532Mp.';                               //SMTP password
@@ -21,8 +21,8 @@ try {
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('projectbaitw.05@gmail.com', 'Bikers Association Industry Around the World');
-    $mail->addAddress('projectbaitw.05@gmail.com', '');     //Add a recipient
+    $mail->setFrom('detallespagos@bicycleassociationindustryaroundtheworld.com', 'Bikers Association Industry Around the World');
+    $mail->addAddress('soporte@bicycleassociationindustryaroundtheworld.com', 'Soporte Bikers Association Industry Around the World');     //Add a recipient
     
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
