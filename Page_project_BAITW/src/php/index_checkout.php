@@ -55,7 +55,7 @@
   <!-- /Loader -->
 
   <!--  Nav  -->
-    <nav class="navbar navbar-expand-md fondo-all" id="backgronud-all">
+    <nav class="navbar navbar-expand-md fondo-all sticky-top" id="backgronud-all">
       <div class="container-fluid">
         <a href="../../index.php" class="navbar-brand text-dark">
           <i class="bi bi-bicycle "class="d-inline-block align-text-top"></i>
@@ -68,23 +68,19 @@
         </button>
 
         <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <nav class="navbar d-md-none sticky-md">
-                            <div class="container-fluid">
-                                <form class="d-flex">
-                                    <input class="form-control me-2 d-flex p-2" type="search" placeholder="Search" aria-label="Search">
-                                    <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
-                                </form>
-                            </div>
-                        </nav>
-                    </li>
-                    <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Events</a></li>
-                    <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Maintenance</a></li>
-                    <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Accessories</a></li>
-                    <li class="nav-item"><a href="#" class="me-auto nav-link active color-dark">Replace</a></li>
-                    <li class="nav-item"><a href="./index_bycle.php" class="me-auto nav-link active color-dark">Bikes</a></li>
-                </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <nav class="navbar d-md-none sticky-md">
+                <div class="container-fluid">
+                  <form class="d-flex">
+                    <input class="form-control me-2 d-flex p-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+                  </form>
+                </div>
+              </nav>
+            </li>
+            <li class="nav-item"><a href="index_bycle.php" class="me-auto nav-link active color-dark">Regresar</a></li>
+          </ul>
         </div>
 
         <nav class="navbar d-none d-md-block">
@@ -109,7 +105,7 @@
   <!-- /Nav -->
 
   <!--  Cont page  -->
-    <main>
+    <main class="mt-5 mb-5">
       <div class="container pt-5 pb-5">
         <div class="table-responsive">
             <table class="table">
@@ -163,7 +159,7 @@
         </div>
         <?php if($lista_carrito != null) { ?>
         <div class="row">
-            <div class="col-md-5 offset-md-7 d-grid gap-2">
+            <div class="col-md-5 offset-md-7 d-grid gap-2 pt-4">
                 <a href="./detalles-de-pago/index_pagos.php" class="btn btn-primary btn-lg">Realizar pago</a>
             </div>
         </div>
@@ -196,12 +192,12 @@
         <div class="row">
           <div class="col-lg-3 col-sm-6">
             <div class="single-box">
-              <div class="baitw-font pb-5">
+              <div class="baitw-font pb-4">
                 <i class="bi bi-bicycle "class="d-inline-block align-text-top"></i>
                 <span>B A I A T W</span>
               </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, reprehenderit.</p>
-              <h3 class="pt-4">We Accept</h3>
+              <p>Somos un en emprendimiento de venta de ciclas, más nuestra nueva incursión a la creación de eventos. donde la gente puede : ver los eventos, comprar ciclas y repuestos. </p>
+              <h3 class="pt-2">Aceptamos</h3>
               <div class="card-area">
                 <i class="fa-brands fa-cc-visa"></i>
                 <i class="fa-brands fa-cc-mastercard"></i>
@@ -211,12 +207,19 @@
             </div>
           </div>
           <div class="col-lg-3 col-sm-6">
-            <div class="single-box">
-              <h2>cards</h2>
+            <div class="single-box">    
               <ul>
-                <li><a href="#">cards</a></li>
-                <li><a href="#">cards</a></li>
-                <li><a href="#">cards</a></li>
+                <li><a href="#">¿Quienes Somos?</a></li>
+                <li><a href="#">Misión</a></li>
+                <li><a href="#">Vicion</a></li>
+                <li><a href="#">Nuestras Sedes</a></li>
+                <li><a href="index_bycle.php">Catalogo</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="single-box">
+              <ul>
                 <li><a href="#">cards</a></li>
                 <li><a href="#">cards</a></li>
               </ul>
@@ -224,25 +227,13 @@
           </div>
           <div class="col-lg-3 col-sm-6">
             <div class="single-box">
-              <h2>cards</h2>
-              <ul>
-                <li><a href="#">cards</a></li>
-                <li><a href="#">cards</a></li>
-                <li><a href="#">cards</a></li>
-                <li><a href="#">cards</a></li>
-                <li><a href="#">cards</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="single-box">
-              <h2>News</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, reiciendis recusandae natus eius enim saepe cumque doloremque at sit dolore!</p>
+              <h2>Suscribete</h2>
+              <p>Te enviaremos nuestro catalo cada vez que se encuentren nuevos productos.</p>
               <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Enter Your Email..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <input type="text" class="form-control" placeholder="Ingresa tu correo.." aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <span class="input-group-text" id="basic-addon2"><i class="bi bi-envelope"></i></span>
               </div>
-              <h2>Follow</h2>
+              <h2>Siguenos en:</h2>
               <p class="socials">
                 <i class="fa-brands fa-square-facebook"></i>
                 <i class="fa-brands fa-square-twitter"></i>
@@ -252,7 +243,7 @@
         </div>
       </div>
       <div class="container text-center pt-5">
-        <p style="color:white;">Copyright© <b> S S W D | B A I A T W </b></p>
+        <p style="color:white;">Copyright© <b>S S W D | B A I A T W</b></p>
       </div>
     </footer>
   <!-- /Footer -->
