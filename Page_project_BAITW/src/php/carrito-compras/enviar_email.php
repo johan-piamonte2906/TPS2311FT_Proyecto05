@@ -21,13 +21,13 @@ try {
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('detallespagos@bicycleassociationindustryaroundtheworld.com', 'Bikers Association Industry Around the World');
-    $mail->addAddress('soporte@bicycleassociationindustryaroundtheworld.com', 'Soporte Bikers Association Industry Around the World');     //Add a recipient
+    $mail->setFrom('projectbaitw.05@gmail.com', 'Bikers Association Industry Around the World');
+    $mail->addAddress('johanm2004@gmail.com', 'Soporte Bikers Association Industry Around the World');
     
     //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->isHTML(true);
     $mail->Subject = 'Detalles de la Compra';
-    $cuerpo = '<h3>Gracias Por Tu compra</h3>';
+    $cuerpo = '<h3>Gracias Por Tu Compra</h3>';
     $cuerpo .= '<p>El ID De Su Compra Es <b>'. $id_transaccion . '</b></p>' ;
     $mail->Body    = utf8_decode($cuerpo);
     $mail->AltBody = 'Envio Detalles De Compra';
@@ -35,5 +35,5 @@ try {
 
     $mail->send();
 } catch (Exception $e) {
-    echo "error al enviar el email: {$mail->ErrorInfo}";
+    echo "Error Al Enviar El Correo: {$mail->ErrorInfo}";
 }

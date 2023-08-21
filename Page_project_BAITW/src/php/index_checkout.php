@@ -137,12 +137,12 @@
                         ?>
                         <tr>
                           <td><?php echo $nombre?></td>
-                          <td><?php echo MONEDA . number_format($precio_desc, 3, '.', ','); ?></td>
+                          <td><?php echo MONEDA . number_format($precio_desc, 3, ',', '.'); ?></td>
                           <td>
                             <input type="number" min="1" max="10" step="1" value="<?php echo $cantidad; ?>" size="5" id="cantidad_<?php echo $_id; ?>" onchange="actualizarCantidad(this.value, <?php echo $_id; ?>)">
                           </td>
                           <td>
-                            <div id="subtotal_<?php echo $_id; ?>" name="subtotal[]"><?php echo MONEDA . number_format($subtotal, 3, '.', ','); ?></div>
+                            <div id="subtotal_<?php echo $_id; ?>" name="subtotal[]"><?php echo MONEDA . number_format($subtotal, 3, ',', '.'); ?></div>
                           </td>
                           <td><a href="#" id="eliminar" class="btn btn-danger btn-sm" data-bs-id="<?php echo $_id; ?>" data-bs-toggle="modal" data-bs-target="#eliminaModal"><i class="fa-solid fa-trash"></i></a></td>
                         </tr>
@@ -150,7 +150,7 @@
                         <tr>
                           <td colspan="3"></td>
                           <td colspan="2">
-                            <p class="h3" id="total"><?php echo MONEDA . number_format($total, 3, '.', ','); ?></p>
+                            <p class="h3" id="total"><?php echo MONEDA . number_format($total, 3, ',', '.'); ?></p>
                           </td>
                         </tr>
                 </tbody>

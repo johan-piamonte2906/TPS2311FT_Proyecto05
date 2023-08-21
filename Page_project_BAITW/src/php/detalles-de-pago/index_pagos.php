@@ -2,6 +2,12 @@
 
   require '../Conexiones/config.php';
   require '../Conexiones/database.php';
+  require '../../mercado_pago/vendor/autoload.php';
+
+  MercadoPago\SDK::setAccessToken(TOKEN_MP);
+
+  $preference = new MercadoPago\preference();
+  $producto_mp = array();
 
   $db = new Database();
   $con = $db->conectar();
@@ -47,6 +53,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- api Paypal solo se puede en EU, MXN etc, No para colombia -->
     <script src="https://www.paypal.com/sdk/js?client-id=<?php echo CLIENT_ID; ?>"></script>
+    <!-- Mercado Pago -->
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
 </head>
 <body>
 
@@ -115,7 +123,16 @@
       <div class="container pt-5 pb-5 mt-4 mb-4">
         <div class="row">
             <div class="col-6">
-                <div class="" id="paypal-button-container"></div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="" id="paypal-button-container"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="checkout-btn"></div>
+                </div>
+              </div>
             </div>
             <div class="col-6">
                 <div class="table-responsive">
@@ -143,6 +160,16 @@
                                     $precio_desc = $precio - (($precio * $descuento) / 100);
                                     $subtotal = $cantidad * $precio_desc;
                                     $total += $subtotal;
+
+                                    $item = new MercadoPago\item();
+                                    $item->id = $_id;
+                                    $item->title = $nombre;
+                                    $item->quantity = $cantidad;
+                                    $item->unit_price = $precio_desc;
+                                    $item->currency_id = "COP";
+
+                                    array_push($producto_mp, $item);
+                                    unset($item);
                                 ?>
                                 <tr>
                                     <td><?php echo $nombre?></td>                                    
@@ -164,6 +191,11 @@
         </div>
       </div>
     </main>
+  <?php
+
+  $preference->items = $producto_mp;
+
+  ?>
   <!-- /Cont page -->
 
   <!-- footer --> 
@@ -230,45 +262,60 @@
 
 
   <!-- javascript -->
-  <script>
-    paypal.Buttons({
-      style:{
-        color:'blue',
-        shape: 'pill',
-        label: 'pay'
-      },
-      crateOrder: function(data, actions){
-        return actions.order.create({
-          purchase_units:[{
-            amount:{
-              value: <?php echo $total; ?>
-            }
-          }]
-        });
-      },
-      onApprove: function(data, action){
-        action.order.capture().then(function(detalles){
-          console.log(detalles)
-          let url = '../carrito-compras/index-captura.php';
-          return fetch(url,{
-            method: 'post',
-            headers: {
-              'content-type': 'application/json'
-            },
-            body: JSON.stringify({
-              detalles: detalles
+    <script>
+      paypal.Buttons({
+        style:{
+          color:'blue',
+          shape: 'pill',
+          label: 'pay'
+        },
+        crateOrder: function(data, actions){
+          return actions.order.create({
+            purchase_units:[{
+              amount:{
+                value: <?php echo $total; ?>
+              }
+            }]
+          });
+        },
+        onApprove: function(data, action){
+          action.order.capture().then(function(detalles){
+            console.log(detalles)
+            let url = '../carrito-compras/index-captura.php';
+            return fetch(url,{
+              method: 'post',
+              headers: {
+                'content-type': 'application/json'
+              },
+              body: JSON.stringify({
+                detalles: detalles
+              })
+            }).then(function(response){
+              location.reload();
             })
-          }).then(function(response){
-            //location.reload()
-          })
+          });
+        },
+        onCancel: function(data){
+          alert("Tu orden ah sido cancelada ha sido cancelada")
+          console.log(data)
+        }
+      }).render('#paypal-button-container');
+    </script>
+    <!-- <script>
+       const mp = new MercadoPago('TEST-349f510c-3863-4580-8ea2-eeeecc8ff295',{
+            locale: 'es-CO' 
         });
-      },
-      onCancel: function(data){
-        alert("Tu orden ah sido cancelada ha sido cancelada")
-        console.log(data)
-      }
-    }).render('#paypal-button-container');
-  </script>
+
+        mp.checkout({
+            preference: {
+                id: '<?php echo $preference->id; ?>'
+            },
+            render: {
+                container: '.checkout-btn',
+                label: 'pagar con MP'
+            }
+        })
+    </script> -->
     <script src="../../js/app-loader.js"></script>
     <!-- <script src="../../js/app-carritoCompras.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

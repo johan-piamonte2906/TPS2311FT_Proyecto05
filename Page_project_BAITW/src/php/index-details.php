@@ -188,14 +188,14 @@
           <p class="lead"><?php echo $descrip; ?></p>
 
           <?php if($descuento > 0)  { ?>
-              <p class="text-end"><del><?php echo MONEDA . number_format($precio, 3, '.', ','); ?></del></p>
+              <p class="text-end"><del><?php echo MONEDA . number_format($precio, 3, ',', '.'); ?></del></p>
               <h2 class="text-end">
-                  <?php echo MONEDA . number_format($precio_desc, 3, '.', ','); ?>
+                  <?php echo MONEDA . number_format($precio_desc, 3, ',', '.'); ?>
                   <small class="text-success">-<?php echo $descuento; ?>% <b>Descuento</b></small>
               </h2>
           <?php }else { ?>
 
-              <h2 class="text-end"><?php echo MONEDA . number_format($precio, 3, '.', ','); ?></h2>
+              <h2 class="text-end"><?php echo MONEDA . number_format($precio, 3, ',', '.'); ?></h2>
 
           <?php } ?>
           <div class="d-grid gap-3 col-10 mx-auto pb-4 pt-3">
