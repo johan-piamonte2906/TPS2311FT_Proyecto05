@@ -21,22 +21,37 @@
     $password = trim($_POST['password']);
     $repassword = trim($_POST['repassword']);
 
-    $id = registraCliente([$nombres, $apellidos, $email, $telefono, $identificacion], $con);
-    if($id > 0){
-        $pass_hash = password_hash($password, PASSWORD_DEFAULT);
-        $token = generaToken();
-        if(!registraUsuario([$usuario, $pass_hash, $token, $id], $con)){
-            $errors[] = "error al registrar usuario";
-        }
-    }else{
-        $errors[] = "error al registrar cliente";
+    if(esNulo([$nombres, $apellidos, $email, $telefono, $identificacion, $usuario, $password, $repassword])){
+        $errors[] = "debe llenar todos los campos";
     }
-  }
 
-  if(count($errors) == 0){
+    if(!esEmail($email)){
+        $errors[] = "La direccion de correo no es valida";
+    }
 
-  }else{
-    print_r($errors);
+    if(!validaPassword($password, $repassword)){
+        $errors[] = "Las contraseñas no coincide";
+    }
+
+    if(usuarioExiste($usuario, $con)){
+        $errors[] = " El nombre de usuario $usuario ya existe";
+    }
+    if(emailExiste($email, $con)){
+        $errors[] = " El Correo electronico $email ya existe";
+    }
+
+    if(count($errors) == 0){
+        $id = registraCliente([$nombres, $apellidos, $email, $telefono, $identificacion], $con);
+        if($id > 0){
+            $pass_hash = password_hash($password, PASSWORD_DEFAULT);
+            $token = generaToken();
+            if(!registraUsuario([$usuario, $pass_hash, $token, $id], $con)){
+                $errors[] = "error al registrar usuario";
+            }
+        }else{
+            $errors[] = "error al registrar cliente";
+        }
+    }
   }
 
 ?>
@@ -64,14 +79,6 @@
 </head>
 <body>
 
-  <!-- Loader -->
-    <div class="lds-ring loader" id="loader">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  <!-- /Loader -->
 
   <!--  Nav  -->
     <nav class="navbar navbar-expand-md fondo-all sticky-top" id="backgronud-all">
@@ -129,38 +136,41 @@
     <main>
       <div class="container pt-4 pb-3">
         <h2 class="mt-3 mb-5 text-center">Datos del Cliente</h2>
+
+        <?php mostrarMensaje($errors); ?>
+
         <form class="row g-3" action="index_registro.php" method="post">
             <div class="col-md-6">
                 <label for="nombres"><span class="text-danger">*</span>Nombres</label>
-                <input class="form-control" type="text" name="nombres" id="nombres" require>
+                <input class="form-control" type="text" name="nombres" id="nombres" requireda>
             </div>
             <div class="col-md-6">
                 <label for="apellidos"><span class="text-danger">*</span>Apellidos</label>
-                <input class="form-control" type="text" name="apellidos" id="apellidos" require>
+                <input class="form-control" type="text" name="apellidos" id="apellidos" requireda>
             </div>
             <div class="col-md-6">
                 <label for="email"><span class="text-danger">*</span>Correo Electronico</label>
-                <input class="form-control" type="email" name="email" id="email" require>
+                <input class="form-control" type="email" name="email" id="email" requireda>
             </div>
             <div class="col-md-6">
                 <label for="telefono"><span class="text-danger">*</span>Telefono</label>
-                <input class="form-control" type="tel" name="telefono" id="telefono" require>
+                <input class="form-control" type="tel" name="telefono" id="telefono" requireda>
             </div>
             <div class="col-md-6">
                 <label for="identificacion"><span class="text-danger">*</span>Numero de identificacion (cc)</label>
-                <input class="form-control" type="text" name="identificacion" id="identificacion" require>
+                <input class="form-control" type="text" name="identificacion" id="identificacion" requireda>
             </div>
             <div class="col-md-6">
                 <label for="usuario"><span class="text-danger">*</span>Nombre Usuario</label>
-                <input class="form-control" type="text" name="usuario" id="usuario" require>
+                <input class="form-control" type="text" name="usuario" id="usuario" requireda>
             </div>
             <div class="col-md-6">
                 <label for="password"><span class="text-danger">*</span>Contraseña</label>
-                <input class="form-control" type="password" name="password" id="password" require>
+                <input class="form-control" type="password" name="password" id="password" requireda>
             </div>
             <div class="col-md-6">
                 <label for="repassword"><span class="text-danger">*</span>Repetir Contraseña</label>
-                <input class="form-control" type="password" name="repassword" id="repassword" require>
+                <input class="form-control" type="password" name="repassword" id="repassword" requireda>
             </div>
 
             <i><b>Nota:</b> Los Campos son Obligatorios</i>
@@ -175,7 +185,6 @@
 
 
   <!-- javascript -->
-    <script src="../../js/app-loader.js"></script>
     <script src="../../js/app-carritoCompras.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
