@@ -72,7 +72,7 @@
     <!--  Icons Bootstrap  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <!--  Fav-icon  -->
-    <link rel="shortcut icon" href="../img/fav-icons/favicon-bicycle.png" type="image/m-icon">
+    <link rel="shortcut icon" href="../../img/fav-icons/favicon-bicycle.png" type="image/m-icon">
     <!-- FONT AWEASOME -->
 	  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -151,6 +151,7 @@
             <div class="col-md-6">
                 <label for="email"><span class="text-danger">*</span>Correo Electronico</label>
                 <input class="form-control" type="email" name="email" id="email" requireda>
+                <span id="validaEmail" class="text-danger"></span>
             </div>
             <div class="col-md-6">
                 <label for="telefono"><span class="text-danger">*</span>Telefono</label>
@@ -163,6 +164,7 @@
             <div class="col-md-6">
                 <label for="usuario"><span class="text-danger">*</span>Nombre Usuario</label>
                 <input class="form-control" type="text" name="usuario" id="usuario" requireda>
+                <span id="validaUsuario" class="text-danger"></span>
             </div>
             <div class="col-md-6">
                 <label for="password"><span class="text-danger">*</span>Contraseña</label>
@@ -185,7 +187,59 @@
 
 
   <!-- javascript -->
-    <script src="../../js/app-carritoCompras.js"></script>
+    <script >
+        
+    // si existe el Usuario
+        let txtUsuario = document.getElementById('usuario')
+        txtUsuario.addEventListener("blur", function(){
+        existeUsuario(txtUsuario.value)
+        }, false)
+
+    // usuario
+        function existeUsuario(usuario){
+        let url = "index_clienteAjax.php"
+        let formData = new FormData()
+        formData.append("action", "existeUsuario")
+        formData.append("usuario", usuario)
+
+        fetch(url,{
+            method: 'POST',
+            body: formData
+        }).then(response => response.json()).then(data =>{
+            if(data.ok){
+                document.getElementById('usuario').value = ''
+                document.getElementById('validaUsuario').innerHTML = 'Usuario No Esta Disponible'
+            }else{
+                document.getElementById('validaUsuario').innerHTML = ''
+            }
+        })
+        }
+    //si existe el correo
+        let txtEmail = document.getElementById('email')
+        txtEmail.addEventListener("blur", function(){
+        existeEmail(txtEmail.value)
+        }, false)
+
+    // correo    
+        function existeEmail(email){
+        let url = "index_clienteAjax.php"
+        let formData = new FormData()
+        formData.append("action", "existeEmail")
+        formData.append("email", email)
+
+        fetch(url,{
+            method: 'POST',
+            body: formData
+        }).then(response => response.json()).then(data =>{
+            if(data.ok){
+                document.getElementById('email').value = ''
+                document.getElementById('validaEmail').innerHTML = 'El Correo Ya Existe'
+            }else{
+                document.getElementById('validaEmail').innerHTML = ''
+            }
+        })
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
