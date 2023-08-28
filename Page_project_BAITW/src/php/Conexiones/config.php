@@ -6,6 +6,15 @@ define("CURRENCY", "COP");
 define("KEY_TOKEN", "JoHaN-2022*");
 define("MONEDA", "$");
 
+// correo
+
+define("MAIL_HOST","smtp.gmail.com");
+define("MAIL_USER","");
+define("MAIL_PASS","");
+define("MAIL_PORT","465");
+
+
+
 session_start();
 
 $num_cart = 0;
