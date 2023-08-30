@@ -114,12 +114,15 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-4 col-md-6">
+              <img id="confiable" src="src/img/img-index/compra_segura.jpg" alt="compras 100% segura">
               <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste animi veritatis dolor illo repudiandae quo saepe autem facere deserunt officia!</span>
             </div>
             <div class="col-xl-4 col-md-6">
+              <img id="envios" src="src/img/img-index/envios.jpg" alt="envios confiebles" >
               <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, nemo asperiores inventore pariatur numquam excepturi delectus alias saepe eligendi aspernatur!</span>
             </div>
             <div class="col-xl-4 col-md-6">
+              <img src="src/img/img-index/logo-compra-en-linea.png" alt="">
               <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit incidunt unde eum ipsum error, numquam dolore odio debitis ratione dicta?</span>
             </div>
         </div>
