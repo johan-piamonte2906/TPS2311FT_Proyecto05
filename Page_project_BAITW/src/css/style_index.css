@@ -97,3 +97,25 @@
 #margin__top_fluid{
     margin-top: -7px;
 }
+
+/*Contenido de la pag*/
+
+#contenido #centro-de-caja{
+    margin-top: 4%;
+}
+
+#contenido #centro-de-caja #imagen1 #confiable {
+    width: 60%;
+    height: 48%;
+    border-radius: 100%;
+}
+#contenido #centro-de-caja #imagen2 #envios {
+    width: 60%;
+    height: 10%;
+    border-radius: 50%;
+}
+#contenido #centro-de-caja #imagen3 #compra-en-linea {
+    width: 100%;
+    height: 48%;
+    border-radius: 50%;
+}

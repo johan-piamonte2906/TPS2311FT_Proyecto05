@@ -111,18 +111,24 @@
   <!-- /Carousel -->
 
   <!--  Cont page  -->    
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-4 col-md-6">
-              <img id="confiable" src="src/img/img-index/compra_segura.jpg" alt="compras 100% segura">
+    <div class="container" id="contenido">
+        <div class="row" id="centro-de-caja">
+            <div class="container col-xl-4 col-md-6">
+              <div class="container pb-4" id="imagen1">
+                <center><img id="confiable" src="src/img/img-index/compra_segura.jpg" alt="compras 100% segura"></center>
+              </div>
               <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste animi veritatis dolor illo repudiandae quo saepe autem facere deserunt officia!</span>
             </div>
-            <div class="col-xl-4 col-md-6">
-              <img id="envios" src="src/img/img-index/envios.jpg" alt="envios confiebles" >
+            <div class="container col-xl-4 col-md-6">
+              <div class="container pb-4" id="imagen2">
+               <center> <img id="envios" src="src/img/img-index/envios.jpg" alt="envios confiebles" ></center>
+              </div>
               <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, nemo asperiores inventore pariatur numquam excepturi delectus alias saepe eligendi aspernatur!</span>
             </div>
-            <div class="col-xl-4 col-md-6">
-              <img src="src/img/img-index/logo-compra-en-linea.png" alt="">
+            <div class="container col-xl-4 col-md-6">
+              <div class="container pb-4" id="imagen3">
+                <center><img id="compra-en-linea" src="src/img/img-index/logo-compra-en-linea.png" alt=""></center>
+              </div>
               <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit incidunt unde eum ipsum error, numquam dolore odio debitis ratione dicta?</span>
             </div>
         </div>
