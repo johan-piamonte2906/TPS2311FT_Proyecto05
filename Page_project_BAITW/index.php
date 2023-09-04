@@ -117,17 +117,26 @@
               <div class="container pb-4" id="imagen1">
                 <center><img id="confiable" src="src/img/img-index/compra_segura.jpg" alt="compras 100% segura"></center>
               </div>
+              <div class="container">
+                <h2 class="text-center pb-2">Compra Segura</h2>
+              </div>
               <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste animi veritatis dolor illo repudiandae quo saepe autem facere deserunt officia!</span>
             </div>
             <div class="container col-xl-4 col-md-6">
               <div class="container pb-4" id="imagen2">
                <center> <img id="envios" src="src/img/img-index/envios.jpg" alt="envios confiebles" ></center>
               </div>
+              <div class="comtainer">
+                <h2 class="text-center pb-2">Envios a toda colombia</h2>
+              </div>
               <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, nemo asperiores inventore pariatur numquam excepturi delectus alias saepe eligendi aspernatur!</span>
             </div>
             <div class="container col-xl-4 col-md-6">
               <div class="container pb-4" id="imagen3">
                 <center><img id="compra-en-linea" src="src/img/img-index/logo-compra-en-linea.png" alt=""></center>
+              </div>
+              <div class="container">
+                <h2 class="text-center pb-2">Compra en linea</h2>
               </div>
               <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit incidunt unde eum ipsum error, numquam dolore odio debitis ratione dicta?</span>
             </div>
