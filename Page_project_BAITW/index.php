@@ -48,8 +48,7 @@
               <nav class="navbar d-md-none sticky-md">
                 <div class="container-fluid">
                   <form class="d-flex">
-                    <input class="form-control me-2 d-flex p-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+                    <button class="btn btn-outline-light" type="submit"><i class="bi bi-person"></i></button>
                   </form>
                 </div>
               </nav>
@@ -62,8 +61,7 @@
         <nav class="navbar d-none d-md-inline-block">
           <div class="container-fluid">
             <form class="d-flex" >
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-light" type="submit"><i class="bi bi-search color-white"></i></button>
+              <a href="" class="btn btn-outline-light" type="submit"><i class="bi bi-person color-white"></i></a>
             </form>
           </div>
         </nav>

@@ -95,8 +95,6 @@
                 <span class="visually-hidden">numero de articulos</span>
                 </span>
               </a>
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-light" type="submit"><i class="bi bi-search color-white"></i></button>
             </form>
           </div>
         </nav>
