@@ -53,7 +53,7 @@
             if($idUsuario > 0){
                 $url = SITE_URL . '/index_activa_cliente.php?id='. $idUsuario .'&token='. $token;
                 $asunto = "Activa Tu cuenta - Bici Bikers Association Industry Around the World ";
-                $cuerpo = "Estimado: $nombres $apellidos <br> Es importante para nosotros tenerte en nuestra familia, Para Continuar <a href='$url'> Activa tu cuenta</a> y disfruta de nuestrs beneficios.";
+                $cuerpo = "Estimad@: $nombres $apellidos <br> Es importante para nosotros tenerte en nuestra familia, Para Continuar <a href='$url'> Activa tu cuenta</a> y disfruta de nuestrs beneficios.";
                 //http://localhost/TPS2311FT_Proyecto05/Page_project_BAITW/src/php/equipo-admin/index_activa_cliente.php?id=1&token=d59468261685632d4e030049062d2205
 
               if($mailer->enviarEmail($email, $asunto, $cuerpo)){
