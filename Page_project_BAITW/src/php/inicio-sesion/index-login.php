@@ -12,32 +12,11 @@
 
   if(!empty($_POST)){
 
-    $nombres = trim($_POST['nombres']);
-    $apellidos = trim($_POST['apellidos']);
-    $email = trim($_POST['email']);
-    $telefono = trim($_POST['telefono']);
-    $identificacion = trim($_POST['identificacion']);
     $usuario = trim($_POST['usuario']);
     $password = trim($_POST['password']);
-    $repassword = trim($_POST['repassword']);
 
-    if(esNulo([$nombres, $apellidos, $email, $telefono, $identificacion, $usuario, $password, $repassword])){
+    if(esNulo([$usuario, $password])){
         $errors[] = "debe llenar todos los campos";
-    }
-
-    if(!esEmail($email)){
-        $errors[] = "La direccion de correo no es valida";
-    }
-
-    if(!validaPassword($password, $repassword)){
-        $errors[] = "Las contraseñas no coincide";
-    }
-
-    if(usuarioExiste($usuario, $con)){
-        $errors[] = " El nombre de usuario $usuario ya existe";
-    }
-    if(emailExiste($email, $con)){
-        $errors[] = " El Correo electronico $email ya existe";
     }
 
   }
@@ -53,8 +32,8 @@
     <title>B A I A T W  | Bikes </title>
     <!--  Styles  -->
     <link rel="stylesheet" href="../../css/style_index.css">
-    <link rel="stylesheet" href="../../css/style_products.css">
     <link rel="stylesheet" href="../../css/style-preloader.css">
+    <link rel="stylesheet" href="../../css/style-login.css">
     <!--  Bootstrap 5  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!--  Icons Bootstrap  -->
@@ -117,17 +96,27 @@
   <!-- /Nav -->
 
   <!--  Cont page  -->
-    <main class="from-login m-auto pt-5">
-      <h2><b>Iniciar Sesion</b></h2>
+    <main class="form-login m-auto pt-5">
+      <h2 class="pt-5 pb-5 text-center"><b>Iniciar Sesion</b></h2>
         <?php mostrarMensaje($errors); ?>
     <form class="row g-3" action="index_login.php" method="post" autocomplete="off">
         <div class="form-floating">
-            <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Nombre Usuario">
+            <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Nombre Usuario" require>
             <label for="usuario">Nombre Usuario</label>
         </div>
         <div class="form-floating">
-            <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Nombre Usuario">
-            <label for="usuario">Nombre Usuario</label>
+            <input class="form-control" type="password" name="password" id="password" placeholder="Contraseña" require>
+            <label for="password">Contraseña</label>
+        </div>
+        <div class="col-12">
+          <a href="recupera.php">¿Olvidaste Tu Contraseña?</a>
+        </div>
+        <div class="d-grid gap-3 col-12">
+          <button type="submit" class="btn btn-primary" >Ingresar</button>
+        </div>
+        <hr>
+        <div class="col-12">
+          ¿No tienes Cuenta? <a href="../equipo-admin/index_registro.php">Registrate Aquí</a>
         </div>
     </form>
     </main>
