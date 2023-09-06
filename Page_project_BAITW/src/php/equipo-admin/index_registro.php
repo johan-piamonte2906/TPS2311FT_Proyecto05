@@ -43,10 +43,25 @@
     if(count($errors) == 0){
         $id = registraCliente([$nombres, $apellidos, $email, $telefono, $identificacion], $con);
         if($id > 0){
-            $pass_hash = password_hash($password, PASSWORD_DEFAULT);
+
+            require 'index-Mailer.php';
+            $mailer = new Mailer();
             $token = generaToken();
-            if(!registraUsuario([$usuario, $pass_hash, $token, $id], $con)){
-                $errors[] = "error al registrar usuario";
+            $pass_hash = password_hash($password, PASSWORD_DEFAULT);
+
+            $idUsuario = registraUsuario([$usuario, $pass_hash, $token, $id], $con);
+            if($idUsuario > 0){
+                $url = SITE_URL . '/index_activa_cliente.php?id='. $idUsuario .'&token='. $token;
+                $asunto = "Activa Tu cuenta - Bici Bikers Association Industry Around the World ";
+                $cuerpo = "Estimado: $nombres $apellidos <br> Es importante para nosotros tenerte en nuestra familia, Para Continuar <a href='$url'> Activa tu cuenta</a> y disfruta de nuestrs beneficios.";
+                //http://localhost/TPS2311FT_Proyecto05/Page_project_BAITW/src/php/equipo-admin/index_activa_cliente.php?id=1&token=d59468261685632d4e030049062d2205
+
+              if($mailer->enviarEmail($email, $asunto, $cuerpo)){
+                echo "Para continuar Con el proceso de registro le enviamos un correo de activacion al $email para continuar su registro ";
+                exit;
+              }
+            }else{
+              $errors[] = "error al registrar usuario";
             }
         }else{
             $errors[] = "error al registrar cliente";
