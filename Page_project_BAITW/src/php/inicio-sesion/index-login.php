@@ -19,6 +19,10 @@
         $errors[] = "debe llenar todos los campos";
     }
 
+    if (count($errors) == 0){
+      $errors[] = login($usuario, $password, $con);
+    }
+
   }
 
 ?>
@@ -99,7 +103,7 @@
     <main class="form-login m-auto pt-5">
       <h2 class="pt-5 pb-5 text-center"><b>Iniciar Sesion</b></h2>
         <?php mostrarMensaje($errors); ?>
-    <form class="row g-3" action="index_login.php" method="post" autocomplete="off">
+    <form class="row g-3" action="index-login.php" method="post" autocomplete="off">
         <div class="form-floating">
             <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Nombre Usuario" require>
             <label for="usuario">Nombre Usuario</label>
