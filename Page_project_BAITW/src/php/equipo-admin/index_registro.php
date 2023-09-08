@@ -58,6 +58,7 @@
 
               if($mailer->enviarEmail($email, $asunto, $cuerpo)){
                 echo "Para continuar Con el proceso de registro le enviamos un correo de activacion al $email para continuar su registro ";
+                header("Location: ../inicio-sesion/index-login.php");
                 exit;
               }
             }else{
@@ -103,6 +104,28 @@
           <span>B A I A T W</span>
         </a>
       </div>
+
+          <!--  Button  -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: 1px solid black;">
+              <!-- <span class="navbar-toggler-icon bg-secondary"></span> -->
+              <i class="navbar-toggle-icon bi bi-list"></i>
+          </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <nav class="navbar d-md-none sticky-md">
+                <div class="container-fluid">
+                  <form class="d-flex">
+                    <input class="form-control me-2 d-flex p-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+                  </form>
+                </div>
+              </nav>
+            </li>
+            <li class="nav-item"><a href="../inicio-sesion/index-login.php" class="me-auto nav-link active color-dark">Regresar</a></li>
+          </ul>
+        </div>
     </nav>
   <!-- /Nav -->
 

@@ -128,4 +128,31 @@
         }
         return false;
     }
+
+    function solicitaPassword($user_id, $con){
+        $token = generaToken();
+        $sql = $con->prepare("UPDATE usuarios SET token_password=?, password_request=1 WHERE id = ?");
+        if ($sql->execute([$token, $user_id])) {
+            return $token;
+        }
+        return null;
+    }
+
+    function verificaTokenRequest($user_id, $token, $con){
+        $sql = $con->prepare("SELECT id FROM usuarios WHERE id = ? AND token_password LIKE ? AND password_request = 1 LIMIT 1");
+        $sql->execute([$user_id, $token]);
+        if($sql->fetchColumn() > 0){
+            return true;
+        }
+        return false;
+    }
+
+    function actualizaPassword($user_id, $password, $con){
+        $sql = $con->prepare("UPDATE usuarios SET password = ?, token_password = '', password_request = 0 WHERE id = ?");
+        if($sql->execute([$password, $user_id])){
+            return true;
+        }
+        return false;
+    }
+
 ?>

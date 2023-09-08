@@ -8,9 +8,10 @@ $id = isset($_GET['id']) ? $_GET['id'] : '';
 $token = isset($_GET['token']) ? $_GET['token'] : '';
 
 if ($id == '' || $token == '') {
-    header("location: ../../../index.php");
+    header("Location: ../inicio-sesion/index-login.php");
     exit;
 }
+header("Location: ../inicio-sesion/index-login.php");
 
 $db = new Database();
 $con = $db->conectar();

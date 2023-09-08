@@ -12,15 +12,42 @@
 
   if(!empty($_POST)){
 
-    $usuario = trim($_POST['usuario']);
-    $password = trim($_POST['password']);
+    $email = trim($_POST['email']);
 
-    if(esNulo([$usuario, $password])){
+    if(esNulo([$email])){
         $errors[] = "debe llenar todos los campos";
     }
 
+    if(!esEmail($email)){
+        $errors[] = "La direccion de correo no es valida";
+    }
+
     if (count($errors) == 0){
-      $errors[] = login($usuario, $password, $con);
+      if(emailExiste($email, $con)){
+        $sql = $con->prepare("SELECT usuarios.id, clientes.nombres FROM usuarios INNER JOIN clientes ON usuarios.id_cliente=clientes.id WHERE clientes.email LIKE ? LIMIT 1");
+        $sql->execute([$email]);
+        $row = $sql->fetch(PDO::FETCH_ASSOC);
+        $user_id = $row['id'];
+        $nombres = $row['nombres'];
+
+        $token = solicitaPassword($user_id, $con);
+        if($token !==null){
+            require 'index-Mailer.php';
+            $mailer = new Mailer();
+            $url = SITE_URL . '/index_reset-password.php?id='. $user_id .'&token='. $token;
+            $asunto = "Recupera Contraseña - Bici Bikers Association Industry Around the World ";
+            $cuerpo = "Estimad@: $nombres $apellidos, <br> Si has solicitado el cambio de tu contraseña da click en el siguiente link<br><br><a href='$url'>Recuperar Contraseña</a> <br><br> De lo contrario omite este mensaje.";
+            if($mailer->enviarEmail($email, $asunto, $cuerpo)){
+                echo '<p><b>Correo Enviado exitosamente</b></p>';
+                echo "<p>Hemos Enviado al Correo $email, Para restablecer tu contraseña</p>";
+                header("Location: ../inicio-sesion/index-login.php");
+                exit;
+              }
+
+        }
+      }else{
+        $errors[] = "Lo sentimos Parece que no hay ningugna cuenta asociada al correo $email ";
+      }
     }
 
   }
@@ -69,22 +96,14 @@
               <nav class="navbar d-md-none sticky-md">
                 <div class="container-fluid">
                   <form class="d-flex">
-                    <a href="../index_checkout.php" type="button" class="btn btn-dark position-relative">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                      </svg>                  
-                      <span id="num_cart" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">        
-                        <?php echo $num_cart; ?>
-                      <span class="visually-hidden">numero de articulos</span>
-                      </span>
-                    </a>
+                    <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
                   </form>
                 </div>
               </nav>
             </li>
-            <li class="nav-item"><a href="../Eventos/index_eventos.php" class="me-auto nav-link active color-dark">Eventos</a></li>
-            <li class="nav-item"><a href="../mantenimientos/index-mantenimientos.php" class="me-auto nav-link active color-dark">Maintenimientos</a></li>
-            <li class="nav-item"><a href="../index_bycle.php" class="me-auto nav-link active color-dark">Bicicletas Repuestos y Más</a></li>
+            <li class="nav-item"><a href="./Eventos/index_eventos.php" class="me-auto nav-link active color-dark">Eventos</a></li>
+            <li class="nav-item"><a href="./mantenimientos/index-mantenimientos.php" class="me-auto nav-link active color-dark">Maintenimientos</a></li>
+            <li class="nav-item"><a href="index_bycle.php" class="me-auto nav-link active color-dark">Bicicletas Repuestos y Más</a></li>
           </ul>
         </div>
 
@@ -109,28 +128,23 @@
 
   <!--  Cont page  -->
     <main class="form-login m-auto pt-5">
-      <h2 class="pt-5 pb-2 text-center"><b>Iniciar Sesion</b></h2>
-        <?php mostrarMensaje($errors); ?>
-    <form class="row g-3" action="index-login.php" method="post" autocomplete="off">
+      <h3 class="pt-5 pb-2 text-center">Recuperar Contraseña</h3>
+
+      <?php mostrarMensaje($errors); ?>
+
+      <form action="index-recupera.php" method="post" class="row g-3" autocomplete="off">
         <div class="form-floating">
-          <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Nombre Usuario" require>
-          <label for="usuario">Nombre Usuario</label>
-        </div>
-        <div class="form-floating">
-            <input class="form-control" type="password" name="password" id="password" placeholder="Contraseña" require>
-            <label for="password">Contraseña</label>
-        </div>
-        <div class="col-12">
-          <a href="../equipo-admin/index-recupera.php">¿Olvidaste Tu Contraseña?</a>
+          <input class="form-control" type="email" name="email" id="email" placeholder="Correo Electronico" require>
+          <label for="email">Correo Electronico</label>
         </div>
         <div class="d-grid gap-3 col-12">
-          <button type="submit" class="btn btn-primary" >Ingresar</button>
+          <button type="submit" class="btn btn-primary" >Continuar</button>
         </div>
         <hr>
         <div class="col-12">
           ¿No tienes Cuenta? <a href="../equipo-admin/index_registro.php">Registrate Aquí</a>
         </div>
-    </form>
+      </form>
     </main>
   <!-- /Cont page -->
 
