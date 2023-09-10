@@ -86,8 +86,32 @@
               <nav class="navbar d-md-none sticky-md">
                 <div class="container-fluid">
                   <form class="d-flex">
-                    <input class="form-control me-2 d-flex p-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+                      <a href="./index_checkout.php" type="button" class="btn btn-dark position-relative me-4 d-md-none d-xl-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                        </svg>                  
+                        <span id="num_cart" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">        
+                          <?php echo $num_cart; ?>
+                        <span class="visually-hidden">numero de articulos</span>
+                        </span>
+                      </a>
+                      <?php if(isset($_SESSION['user_id'])){ ?>
+                        <a href="./equipo-admin/sesion_destroit.php" type="button" class="btn btn-dark position-relative me-5 d-md-none d-xl-block">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                          </svg>
+                          <span id="num_cart" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">        
+                            <?php echo $_SESSION['user_name']; ?>
+                          <span class="visually-hidden">numero de articulos</span>
+                          </span>
+                        </a>
+                      <?php } else{ ?>
+                        <a href="./inicio-sesion/index-login.php" type="button" class="btn btn-dark position-relative me-5 d-md-none d-xl-block">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                          </svg>
+                        </a>
+                      <?php }  ?>
                   </form>
                 </div>
               </nav>
@@ -99,17 +123,32 @@
         <nav class="navbar d-none d-md-block">
           <div class="container-fluid">
             <form class="d-flex">
-              <a href="../index_checkout.php" type="button" class="btn btn-dark position-relative me-4 d-md-none d-xl-block">
+              <a href="./index_checkout.php" type="button" class="btn btn-dark position-relative me-4 d-md-none d-xl-block">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                 </svg>                  
                 <span id="num_cart" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">        
                   <?php echo $num_cart; ?>
-                <span class="visually-hidden">numero de articulos</span>
+                  <span class="visually-hidden">numero de articulos</span>
                 </span>
               </a>
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-light" type="submit"><i class="bi bi-search color-white"></i></button>
+               <?php if(isset($_SESSION['user_id'])){ ?>
+                <a href="./equipo-admin/sesion_destroit.php" type="button" class="btn btn-dark position-relative me-5 d-md-none d-xl-block">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                  </svg>
+                  <span id="num_cart" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">        
+                    <?php echo $_SESSION['user_name']; ?>
+                  <span class="visually-hidden">numero de articulos</span>
+                  </span>
+                </a>
+              <?php } else{ ?>
+              <a href="./inicio-sesion/index-login.php" type="button" class="btn btn-dark position-relative me-5 d-md-none d-xl-block">
+               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                </svg>
+              </a>
+             <?php }  ?>
             </form>
           </div>
         </nav>
@@ -118,84 +157,84 @@
   <!-- /Nav -->
 
   <!--  Cont page  -->
-  <center><h2 class="pt-4">Detalles de productos</h2></center>
-    <main>
-      <div class="container pt-5 pb-5 mt-4 mb-4">
-        <div class="row">
-            <div class="col-6">
-              <div class="row">
-                <div class="col-12">
-                  <div class="" id="paypal-button-container"></div>
+    <center><h2 class="pt-4">Detalles de productos</h2></center>
+      <main>
+        <div class="container pt-5 pb-5 mt-4 mb-4">
+          <div class="row">
+              <div class="col-6">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="" id="paypal-button-container"></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="checkout-btn"></div>
+                  </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-12">
-                  <div class="checkout-btn"></div>
-                </div>
+              <div class="col-6">
+                  <div class="table-responsive">
+                      <table class="table">
+                          <thead>
+                              <tr>
+                                  <th>Producto</th>
+                                  <th>Subtotal</th>
+                                  <th></th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <?php if($lista_carrito == 0){
+                                  echo '<tr><td colspan="5" class="text-center"><b><div class="alert alert-success" role="alert">
+                                  El Carrito Esta vacio <a href="./index_bycle.php" class="alert-link">Agrega cosas</a>, Para continuar
+                              </div></b></td></tr>';
+                              }else {
+                                  $total = 0;
+                                  foreach($lista_carrito as $producto){
+                                      $_id = $producto['id'];
+                                      $nombre = $producto['nombres'];
+                                      $precio = $producto['precio'];
+                                      $descuento = $producto['descuento'];
+                                      $cantidad = $producto['cantidad'];
+                                      $precio_desc = $precio - (($precio * $descuento) / 100);
+                                      $subtotal = $cantidad * $precio_desc;
+                                      $total += $subtotal;
+
+                                      $item = new MercadoPago\item();
+                                      $item->id = $_id;
+                                      $item->title = $nombre;
+                                      $item->quantity = $cantidad;
+                                      $item->unit_price = $precio_desc;
+                                      $item->currency_id = "COP";
+
+                                      array_push($producto_mp, $item);
+                                      unset($item);
+                                  ?>
+                                  <tr>
+                                      <td><?php echo $nombre?></td>                                    
+                                      <td>
+                                          <div id="subtotal_<?php echo $_id; ?>" name="subtotal[]"><?php echo MONEDA . number_format($subtotal, 3, '.', ','); ?></div>
+                                      </td>                                    
+                                  </tr>
+                                  <?php }?>
+                                  <tr>                                    
+                                      <td colspan="5">
+                                          <p class="h3 text-center" id="total"><?php echo MONEDA . number_format($total, 3, '.', ','); ?></p>
+                                      </td>
+                                  </tr>
+                          </tbody>
+                          <?php } ?>
+                      </table>
+                  </div>
               </div>
-            </div>
-            <div class="col-6">
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Producto</th>
-                                <th>Subtotal</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php if($lista_carrito == 0){
-                                echo '<tr><td colspan="5" class="text-center"><b><div class="alert alert-success" role="alert">
-                                El Carrito Esta vacio <a href="./index_bycle.php" class="alert-link">Agrega cosas</a>, Para continuar
-                            </div></b></td></tr>';
-                            }else {
-                                $total = 0;
-                                foreach($lista_carrito as $producto){
-                                    $_id = $producto['id'];
-                                    $nombre = $producto['nombres'];
-                                    $precio = $producto['precio'];
-                                    $descuento = $producto['descuento'];
-                                    $cantidad = $producto['cantidad'];
-                                    $precio_desc = $precio - (($precio * $descuento) / 100);
-                                    $subtotal = $cantidad * $precio_desc;
-                                    $total += $subtotal;
-
-                                    $item = new MercadoPago\item();
-                                    $item->id = $_id;
-                                    $item->title = $nombre;
-                                    $item->quantity = $cantidad;
-                                    $item->unit_price = $precio_desc;
-                                    $item->currency_id = "COP";
-
-                                    array_push($producto_mp, $item);
-                                    unset($item);
-                                ?>
-                                <tr>
-                                    <td><?php echo $nombre?></td>                                    
-                                    <td>
-                                        <div id="subtotal_<?php echo $_id; ?>" name="subtotal[]"><?php echo MONEDA . number_format($subtotal, 3, '.', ','); ?></div>
-                                    </td>                                    
-                                </tr>
-                                <?php }?>
-                                <tr>                                    
-                                    <td colspan="5">
-                                        <p class="h3 text-center" id="total"><?php echo MONEDA . number_format($total, 3, '.', ','); ?></p>
-                                    </td>
-                                </tr>
-                        </tbody>
-                        <?php } ?>
-                    </table>
-                </div>
-            </div>
+          </div>
         </div>
-      </div>
-    </main>
-  <?php
+      </main>
+    <?php
 
-  $preference->items = $producto_mp;
+    $preference->items = $producto_mp;
 
-  ?>
+    ?>
   <!-- /Cont page -->
 
   <!-- footer --> 

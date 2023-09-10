@@ -33,7 +33,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B A I A T W  | Bikes </title>
+    <title>B A I A T W  | Inicio Sesion </title>
     <!--  Styles  -->
     <link rel="stylesheet" href="../../css/style_index.css">
     <link rel="stylesheet" href="../../css/style-preloader.css">
@@ -53,7 +53,7 @@
   <!--  Nav  -->
     <nav class="navbar navbar-expand-md fondo-all sticky-top" id="backgronud-all">
       <div class="container-fluid">
-        <a href="../../index.php" class="navbar-brand text-dark">
+        <a href="../../../index.php" class="navbar-brand text-dark">
           <i class="bi bi-bicycle "class="d-inline-block align-text-top"></i>
           <span>B A I A T W</span>
         </a>
@@ -91,7 +91,7 @@
         <nav class="navbar d-none d-md-block">
           <div class="container-fluid">
             <form class="d-flex">
-              <a href="./index_checkout.php" type="button" class="btn btn-dark position-relative me-4 d-md-none d-xl-block">
+              <a href="../index_checkout.php" type="button" class="btn btn-dark position-relative me-4 d-md-none d-xl-block">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                 </svg>                  
@@ -108,31 +108,35 @@
   <!-- /Nav -->
 
   <!--  Cont page  -->
-    <main class="form-login m-auto pt-5">
+    <main class="form-login m-auto pt-5 pb-5">
       <h2 class="pt-5 pb-2 text-center"><b>Iniciar Sesion</b></h2>
         <?php mostrarMensaje($errors); ?>
-    <form class="row g-3" action="index-login.php" method="post" autocomplete="off">
-        <div class="form-floating">
-          <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Nombre Usuario" require>
-          <label for="usuario">Nombre Usuario</label>
-        </div>
-        <div class="form-floating">
-            <input class="form-control" type="password" name="password" id="password" placeholder="Contraseña" require>
-            <label for="password">Contraseña</label>
-        </div>
-        <div class="col-12">
-          <a href="../equipo-admin/index-recupera.php">¿Olvidaste Tu Contraseña?</a>
-        </div>
-        <div class="d-grid gap-3 col-12">
-          <button type="submit" class="btn btn-primary" >Ingresar</button>
-        </div>
-        <hr>
-        <div class="col-12">
-          ¿No tienes Cuenta? <a href="../equipo-admin/index_registro.php">Registrate Aquí</a>
-        </div>
-    </form>
+      <form class="row g-3" action="index-login.php" method="post" autocomplete="off">
+          <div class="form-floating">
+            <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Nombre Usuario" require>
+            <label for="usuario">Nombre Usuario</label>
+          </div>
+          <div class="form-floating">
+              <input class="form-control" type="password" name="password" id="password" placeholder="Contraseña" require>
+              <label for="password">Contraseña</label>
+          </div>
+          <div class="col-12">
+            <a href="../equipo-admin/index-recupera.php">¿Olvidaste Tu Contraseña?</a>
+          </div>
+          <div class="d-grid gap-3 col-12">
+            <button type="submit" class="btn btn-primary" >Ingresar</button>
+          </div>
+          <hr>
+          <div class="col-12">
+            ¿No tienes Cuenta? <a href="../equipo-admin/index_registro.php">Registrate Aquí</a>
+          </div>
+      </form>
     </main>
   <!-- /Cont page -->
+
+  <!-- footer -->
+    <?php include'../pag/footer/footer-all-ev-ma.php'; ?>
+  <!-- /footer -->
 
   <!-- javascript -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

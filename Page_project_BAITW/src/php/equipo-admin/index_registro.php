@@ -78,7 +78,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B A I A T W  | Bikes </title>
+    <title>B A I A T W  | Registro </title>
     <!--  Styles  -->
     <link rel="stylesheet" href="../../css/style_index.css">
     <link rel="stylesheet" href="../../css/style_products.css">
@@ -103,13 +103,11 @@
           <i class="bi bi-bicycle "class="d-inline-block align-text-top"></i>
           <span>B A I A T W</span>
         </a>
-      </div>
-
-          <!--  Button  -->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: 1px solid black;">
+            <!--  Button  -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: 1px solid black;">
               <!-- <span class="navbar-toggler-icon bg-secondary"></span> -->
               <i class="navbar-toggle-icon bi bi-list"></i>
-          </button>
+        </button>
 
         <div class="collapse navbar-collapse" id="menu">
           <ul class="navbar-nav">
@@ -117,8 +115,9 @@
               <nav class="navbar d-md-none sticky-md">
                 <div class="container-fluid">
                   <form class="d-flex">
-                    <input class="form-control me-2 d-flex p-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+                    <span id="num_cart" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">        
+                      <?php echo $num_cart; ?>
+                    <span class="visually-hidden">numero de articulos</span>
                   </form>
                 </div>
               </nav>
@@ -126,6 +125,23 @@
             <li class="nav-item"><a href="../inicio-sesion/index-login.php" class="me-auto nav-link active color-dark">Regresar</a></li>
           </ul>
         </div>
+
+        <nav class="navbar d-none d-md-block">
+          <div class="container-fluid">
+            <form class="d-flex">
+              <a href="../index_checkout.php" type="button" class="btn btn-dark position-relative me-4 d-md-none d-xl-block">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>                  
+                <span id="num_cart" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">        
+                  <?php echo $num_cart; ?>
+                <span class="visually-hidden">numero de articulos</span>
+                </span>
+              </a>
+            </form>
+          </div>
+        </nav>
+      </div>
     </nav>
   <!-- /Nav -->
 
