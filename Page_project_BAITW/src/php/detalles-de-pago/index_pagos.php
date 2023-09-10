@@ -296,7 +296,7 @@
             purchase_units:[{
               amount:{
                 value: <?php echo $total; ?>
-              }
+              }, 
             }]
           });
         },

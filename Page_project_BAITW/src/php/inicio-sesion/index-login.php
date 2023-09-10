@@ -10,17 +10,20 @@
 
   $errors=[];
 
+  $proceso = isset($_GET['pago']) ? 'pago' : 'login';
+
   if(!empty($_POST)){
 
     $usuario = trim($_POST['usuario']);
     $password = trim($_POST['password']);
+    $proceso = $_POST['proceso'] ?? 'login';
 
     if(esNulo([$usuario, $password])){
         $errors[] = "debe llenar todos los campos";
     }
 
     if (count($errors) == 0){
-      $errors[] = login($usuario, $password, $con);
+      $errors[] = login($usuario, $password, $con, $proceso);
     }
 
   }
@@ -112,6 +115,7 @@
       <h2 class="pt-5 pb-2 text-center"><b>Iniciar Sesion</b></h2>
         <?php mostrarMensaje($errors); ?>
       <form class="row g-3" action="index-login.php" method="post" autocomplete="off">
+          <input type="hidden" name="proceso" value="<?php echo $proceso; ?>">
           <div class="form-floating">
             <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Nombre Usuario" require>
             <label for="usuario">Nombre Usuario</label>

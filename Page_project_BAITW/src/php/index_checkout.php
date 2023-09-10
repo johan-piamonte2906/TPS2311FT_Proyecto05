@@ -184,7 +184,11 @@
         <?php if($lista_carrito != null) { ?>
         <div class="row">
             <div class="col-md-5 offset-md-7 d-grid gap-2 pt-4">
+              <?php if(isset($_SESSION['user_cliente'])){ ?>
                 <a href="./detalles-de-pago/index_pagos.php" class="btn btn-primary btn-lg">Realizar pago</a>
+              <?php }else{ ?>
+                <a href="./inicio-sesion/index-login.php?pago" class="btn btn-primary btn-lg">Realizar pago</a>
+              <?php }?>
             </div>
         </div>
         <?php } ?>
