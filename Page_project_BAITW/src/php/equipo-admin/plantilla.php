@@ -8,11 +8,6 @@
   $db = new Database();
   $con = $db->conectar();
 
-  $token = generaToken();
-  $_SESSION['token'] = $token;
-  $idCliente = $_SESSION['user_cliente'];
-  $sql = $con->prepare("SELECT id_transaccion, fecha, status, total FROM compra WHERE id_cliente = ? ORDER BY DATE(fecha) DESC");
-  $sql->execute([$idCliente]);
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +16,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B A I A T W  | Mis Compras </title>
+    <title>B A I A T W  | Plantilla </title>
     <!--  Styles  -->
     <link rel="stylesheet" href="../../css/style_index.css">
     <link rel="stylesheet" href="../../css/style_products.css">
@@ -104,27 +99,13 @@
 
   <!--  Cont page  -->
     <main>
-      <div class="container pt-5">
-        <h4>Mis Compras</h4>
-        <hr>
-        <?php while ($row = $sql->fetch(PDO::FETCH_ASSOC)){ ?>
-        <div class="card text-dark border-info mb-3">
-          <div class="card-header">
-            <?php echo $row['fecha']; ?>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Id Compra: <?php echo $row['id_transaccion']; ?></h5>
-            <p class="card-text"> Total: <?php echo MONEDA, '' . number_format($row['total'], 3, '.', ','); ?></p>
-            <a href="index-detalles-C.php?order=<?php echo $row['id_transaccion']; ?>&token=<?php echo $token; ?>" class="btn btn-primary">Detalles de Compra</a>
-          </div>
-        </div>
-        <?php } ?>
-      </div>
+      
     </main>
   <!-- /Cont page -->
 
 
   <!-- javascript -->
+  
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
   <!-- /javascript -->

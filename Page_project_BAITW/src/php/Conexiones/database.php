@@ -5,7 +5,7 @@ class Database{
     private $hostname = "localhost";
     private $database = "project_baitw";
     private $username = "root";
-    private $password = "root";
+    private $password = "";
     private $charset = "utf8";
 
     function conectar()
