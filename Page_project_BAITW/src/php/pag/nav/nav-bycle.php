@@ -34,6 +34,7 @@
                         </svg> <?php echo $_SESSION['user_name']; ?>
                       </button>
                       <ul class="dropdown-menu bg-secondary" aria-labelledby="btn-cerrar-sesion">
+                        <li><a class="dropdown-item" href="./equipo-admin/index-compras.php">Mis Compras</a></li>
                         <li><a class="dropdown-item" href="./equipo-admin/index-logout.php">Cerrar Sesion</a></li>
                       </ul>
                     </div>
@@ -74,6 +75,7 @@
                   </svg> <?php echo $_SESSION['user_name']; ?>
                 </button>
                 <ul class="dropdown-menu bg-secondary" aria-labelledby="btn-cerrar-sesion">
+                  <li><a class="dropdown-item" href="./equipo-admin/index-compras.php">Mis Compras</a></li>
                   <li><a class="dropdown-item" href="./equipo-admin/index-logout.php">Cerrar Sesion</a></li>
                 </ul>
               </div>

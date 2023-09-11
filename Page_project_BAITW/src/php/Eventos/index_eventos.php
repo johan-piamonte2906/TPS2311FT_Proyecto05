@@ -36,7 +36,7 @@ require '../Conexiones/database.php';
   <!-- /loader -->
 
   <!--  Nav  -->
-    <?php include'../pag/nav/nav-eventos.php'; ?>
+    <?php include'../pag/nav/nav-mantenimientos.php'; ?>
   <!-- /Nav -->
 
   <!-- contenido pg -->

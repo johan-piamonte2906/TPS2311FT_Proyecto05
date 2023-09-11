@@ -221,65 +221,7 @@
   <!-- /Cont page -->
 
   <!-- footer --> 
-    <footer class="footer-all footer-end pt-5 pb-4">
-      <div class="container footer_all">
-        <div class="row">
-          <div class="col-lg-3 col-sm-6">
-            <div class="single-box">
-              <div class="baitw-font pb-4">
-                <i class="bi bi-bicycle "class="d-inline-block align-text-top"></i>
-                <span>B A I A T W</span>
-              </div>
-              <p>Somos un en emprendimiento de venta de ciclas, más nuestra nueva incursión a la creación de eventos. donde la gente puede : ver los eventos, comprar ciclas y repuestos. </p>
-              <h3 class="pt-2">Aceptamos</h3>
-              <div class="card-area">
-                <i class="fa-brands fa-cc-visa"></i>
-                <i class="fa-brands fa-cc-mastercard"></i>
-                <i class="fa-solid fa-credit-card"></i>
-                <i class="fa-brands fa-cc-paypal"></i>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="single-box">    
-              <ul>
-                <li><a href="#">¿Quienes Somos?</a></li>
-                <li><a href="#">Misión</a></li>
-                <li><a href="#">Vicion</a></li>
-                <li><a href="#">Nuestras Sedes</a></li>
-                <li><a href="../index_bycle.php">Catalogo</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="single-box">
-              <ul>
-                <li><a href="#">cards</a></li>
-                <li><a href="#">cards</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="single-box">
-              <h2>Suscribete</h2>
-              <p>Te enviaremos nuestro catalo cada vez que se encuentren nuevos productos.</p>
-              <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Ingresa tu correo.." aria-label="Recipient's username" aria-describedby="basic-addon2">
-                <span class="input-group-text" id="basic-addon2"><i class="bi bi-envelope"></i></span>
-              </div>
-              <h2>Siguenos en:</h2>
-              <p class="socials">
-                <i class="fa-brands fa-square-facebook"></i>
-                <i class="fa-brands fa-square-twitter"></i>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container text-center pt-5">
-        <p style="color:white;">Copyright© <b>S S W D | B A I A T W</b></p>
-      </div>
-    </footer>
+    <?php include'../pag/footer/footer-all-ev-ma.php'; ?>
   <!-- /Footer -->
 
 

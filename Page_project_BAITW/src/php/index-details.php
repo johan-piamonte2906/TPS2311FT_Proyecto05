@@ -97,7 +97,7 @@
   <!-- /Loader -->
 
   <!--  Nav  -->
-    <?php include'./pag/nav/nav-details.php'; ?>    
+    <?php include'./pag/nav/nav-bycle.php'; ?> 
   <!-- /Nav -->
 
   <!--  Cont page  -->

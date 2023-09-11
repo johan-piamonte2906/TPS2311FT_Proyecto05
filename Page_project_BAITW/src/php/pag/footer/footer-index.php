@@ -84,23 +84,23 @@
                 <li><a href="#" data-bs-toggle="modal" data-bs-target="#sedes">Nuestras Sedes</a></li>
                 <!-- Modal -->
                 <div class="modal fade aling-items-center" id="sedes" tabindex="-1" aria-labelledby="sedes" aria-hidden="true">
-                      <div class="modal-dialog">
-                          <div class="modal-content bg-secondary">
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col aling-items-center">
-                                        <h3 class="text-center">Ubicacion tienda Oficial</h3>
-                                        <hr>
-                                        <center><div class="mapouter"><div class="gmap_canvas"><iframe width="450" height="390" id="gmap_canvas" src="https://maps.google.com/maps?q=calle+131+b+95+a&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://online.stopwatch-timer.net/">timer stopwatch</a><br><a href="https://textcaseconvert.com/"></a><br><a href="https://online-timer.me/"></a><br><style>.mapouter{position: relative;text-align: right;height: 390px;width: 450px;}</style><a href="https://www.embedmaps.co">embed google maps</a><style>.gmap_canvas{overflow: hidden;background: none !important;height: 390px;width: 450px;}</style></div></div></center>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                            </div>
+                  <div class="modal-dialog">
+                    <div class="modal-content bg-secondary">
+                      <div class="modal-body">
+                        <div class="row">
+                          <div class="col aling-items-center">
+                            <h3 class="text-center">Ubicacion tienda Oficial</h3>
+                            <hr>
+                            <center><div class="mapouter"><div class="gmap_canvas"><iframe width="450" height="390" id="gmap_canvas" src="https://maps.google.com/maps?q=calle+131+b+95+a&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://online.stopwatch-timer.net/">timer stopwatch</a><br><a href="https://textcaseconvert.com/"></a><br><a href="https://online-timer.me/"></a><br><style>.mapouter{position: relative;text-align: right;height: 390px;width: 450px;}</style><a href="https://www.embedmaps.co">embed google maps</a><style>.gmap_canvas{overflow: hidden;background: none !important;height: 390px;width: 450px;}</style></div></div></center>
                           </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
                       </div>
                     </div>
+                  </div>
+                </div>
                 <li><a href="./src/php/index_bycle.php">Catalogo</a></li>
               </ul>
             </div>

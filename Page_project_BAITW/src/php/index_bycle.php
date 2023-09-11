@@ -47,7 +47,7 @@
   <!-- /Loader -->
 
   <!-- nav -->
-    <?php include './pag/nav/nav-bycle.php'; ?>
+    <?php include'./pag/nav/nav-bycle.php'; ?>
   <!-- /nav -->
 
   <!--  Cont page  -->
