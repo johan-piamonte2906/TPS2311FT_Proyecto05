@@ -14,8 +14,18 @@
     <link rel="shortcut icon" href="./img/favicon-bicycle.png" type="image/x-icon">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- javascript -->
+    <script src="js/loader.js"></script>
 </head>
 <body id="body" class="d-xxs">
+    <!-- loader -->
+    <div class="lds-ring loader" id="loader">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  <!-- /loader -->
     <div class="box">
         <span class="borderline"></span>
         <form action="index.php" method="POST" autocomplete="off">
