@@ -1,5 +1,30 @@
 <?php
 
+require './src/config/database.php';
+require './src/clases/Admin-funciones.php';
+
+$db = new Database();
+$con = $db->conectar();
+
+/* 
+$password = password_hash('admin', PASSWORD_DEFAULT);
+$sql = "INSERT INTO admin (usuario, password, nombre, email, activo, fecha_alta) VALUES ('admin','$password','Administrador','projectbaitw.05@gmail.com','1',NOW())";
+$con->query($sql);
+*/
+$errors = [];
+
+if(!empty($_POST)){
+    $usuario = trim($_POST['usuario']);
+    $password = trim($_POST['password']);
+
+    if(esNulo([$usuario, $password])){
+        $errors[] = "Debe llenar todos los campos";
+    }
+
+    if(count($errors) == 0){
+        $errors[] = login($usuario, $password, $con);
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,13 +34,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B A I A T W | Administracion inicio sesion</title>
     <!-- Estilos -->
-    <link rel="stylesheet" href="css/style-inicio.css">
+    <link rel="stylesheet" href="./src/css/style-inicio.css">
     <!-- Fav-Icon -->
-    <link rel="shortcut icon" href="./img/favicon-bicycle.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./src/img/favicon-bicycle.png" type="image/x-icon">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- javascript -->
-    <script src="js/loader.js"></script>
+    <script src="./src/js/loader.js"></script>
 </head>
 <body id="body" class="d-xxs">
     <!-- loader -->
@@ -26,26 +51,38 @@
       <div></div>
     </div>
   <!-- /loader -->
-    <div class="box">
-        <span class="borderline"></span>
-        <form action="index.php" method="POST" autocomplete="off">
-            <h2>Inicia Sesion</h2>
-            <div class="inputbox d-xs">
-                <input type="text" name="username" required>
-                <span>Username</span>
-                <i></i>
+  <!-- cont pag -->
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="box">
+                    <span class="borderline"></span>
+                    <form action="index.php" method="POST" autocomplete="off">
+                        <h2>Inicia Sesion</h2>
+                        
+                        <div class="inputbox d-xs">
+                            <input type="text" name="usuario" id="usuario" autofocus requireda>
+                            <span>Username</span>
+                            <i></i>
+                        </div>
+                        <div class="inputbox d-xs">
+                            <input type="password" name="password" id="password" autofocus requireda>
+                            <span>Contraseña</span>
+                            <i></i>
+                        </div>
+                        <div class="links">
+                            <a href="#">¿Olvidaste tu contraseña?</a>
+                        </div>
+                        <button type="submit" value="Ingresar">Ingresar</button>
+                    </form>
+                </div>
             </div>
-            <div class="inputbox d-xs">
-                <input type="password" name="password" required>
-                <span>Contraseña</span>
-                <i></i>
+            <div class="col-6">
+                <?php mostrarMensaje($errors); ?>
             </div>
-            <div class="links">
-                <a href="#">¿Olvidaste tu contraseña?</a>
-            </div>
-            <input type="submit" value="Ingresar">
-        </form>
+        </div>
     </div>
+  <!-- /cont pag -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
