@@ -80,34 +80,34 @@ require './src/php/Conexiones/config.php';
   <!-- /Carousel -->
 
   <!--  Cont page  -->    
-    <div class="container" id="contenido">
+    <div class="container pb-5 mb-5" id="contenido">
         <div class="row" id="centro-de-caja">
-            <div class="container col-xl-4 col-md-6">
-              <div class="container pb-4" id="imagen1">
+            <div class="container d-auto col-xl-4 col-md-6">
+              <div class="container pb-2" id="imagen1">
                 <center><img id="confiable" src="src/img/img-index/compra_segura.jpg" alt="compras 100% segura"></center>
               </div>
               <div class="container">
-                <h2 class="text-center pb-2">Compra Segura</h2>
+                <h2 class="text-center pb-3">Compra Segura</h2>
               </div>
-              <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste animi veritatis dolor illo repudiandae quo saepe autem facere deserunt officia!</span>
+              <span>En Bicycle Association Industry Around the World, entendemos la importancia de brindar a nuestros clientes una experiencia de compra en línea sin preocupaciones. Nos comprometemos a ofrecer un entorno seguro y confiable para que realices tus compras con total <b>tranquilidad</b>.</span>
             </div>
-            <div class="container col-xl-4 col-md-6">
-              <div class="container pb-4" id="imagen2">
+            <div class="container d-auto col-xl-4 col-md-6">
+              <div class="container pb-2" id="imagen2">
                <center> <img id="envios" src="src/img/img-index/envios.jpg" alt="envios confiebles" ></center>
               </div>
               <div class="comtainer">
-                <h2 class="text-center pb-2">Envios a toda colombia</h2>
+                <h2 class="text-center pb-3">Envios a toda colombia</h2>
               </div>
-              <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, nemo asperiores inventore pariatur numquam excepturi delectus alias saepe eligendi aspernatur!</span>
+              <span>En Bicycle Association Industry Around the World, no solo ofrecemos productos excepcionales, sino también una experiencia de compra que se extiende a cada rincón de Colombia. Queremos que disfrutes de la tranquilidad de saber que tu pedido está en buenas manos, desde el clic hasta la entrega, <b>Cobertura completa</b>,<b>Seguridad en Cada Paquete</b>,<b>Soporte Nacional 24/7</b> y Mucho Más.</span>
             </div>
-            <div class="container col-xl-4 col-md-6">
-              <div class="container pb-4" id="imagen3">
+            <div class="container d-auto col-xl-4 col-md-6">
+              <div class="container pb-2" id="imagen3">
                 <center><img id="compra-en-linea" src="src/img/img-index/logo-compra-en-linea.png" alt=""></center>
               </div>
               <div class="container">
-                <h2 class="text-center pb-2">Compra en linea</h2>
+                <h2 class="text-center pb-3">Compra en linea</h2>
               </div>
-              <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit incidunt unde eum ipsum error, numquam dolore odio debitis ratione dicta?</span>
+              <span>En Bicycle Association Industry Around the World, la comodidad de comprar en línea se combina con la confianza de recibir productos de calidad, sin importar en qué parte de Colombia te encuentres. Explora nuestro catálogo desde la comodidad de tu hogar y deja que tus productos favoritos lleguen directamente a tu puerta.</span>
             </div>
         </div>
     </div>

@@ -95,6 +95,14 @@
 </head>
 <body>
 
+  <!-- loader -->
+  <div class="lds-ring loader" id="loader">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  <!-- /loader -->
 
   <!--  Nav  -->
     <nav class="navbar navbar-expand-md fondo-all sticky-top" id="backgronud-all">
@@ -147,8 +155,8 @@
 
   <!--  Cont page  -->
     <main>
-      <div class="container pt-4 pb-3">
-        <h2 class="mt-3 mb-5 pt-5 pb-4 text-center">Registro Cliente</h2>
+      <div class="container pt-4 pb-5">
+        <h2 class="mt-3 mb-5 pt-5 text-center">Registro Cliente</h2>
 
         <?php mostrarMensaje($errors); ?>
 
@@ -197,6 +205,10 @@
       </div>
     </main>
   <!-- /Cont page -->
+
+    <!-- footer -->
+    <?php include'../pag/footer/footer-all-ev-ma.php'; ?>
+  <!-- /footer -->
 
 
   <!-- javascript -->
@@ -253,6 +265,7 @@
         })
         }
     </script>
+    <script src="../../js/app-loader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>

@@ -77,6 +77,15 @@
 </head>
 <body>
 
+    <!-- loader -->
+    <div class="lds-ring loader" id="loader">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  <!-- /loader -->
+
   <!--  Nav  -->
     <nav class="navbar navbar-expand-md fondo-all sticky-top" id="backgronud-all">
       <div class="container-fluid">
@@ -125,8 +134,8 @@
   <!-- /Nav -->
 
   <!--  Cont page  -->
-    <main class="form-login m-auto pt-5">
-      <h3 class="pt-5 pb-2 text-center">Recuperar Contraseña</h3>
+    <main class="form-login m-auto pt-5 pb-5">
+      <h3 class="pt-5 pb-4 text-center">Recuperar Contraseña</h3>
 
       <?php mostrarMensaje($errors); ?>
 
@@ -135,7 +144,7 @@
           <input class="form-control" type="email" name="email" id="email" placeholder="Correo Electronico" require>
           <label for="email">Correo Electronico</label>
         </div>
-        <div class="d-grid gap-3 col-12">
+        <div class="d-grid gap-3 pt-2 pb-3 col-12">
           <button type="submit" class="btn btn-primary" >Continuar</button>
         </div>
         <hr>
@@ -146,7 +155,12 @@
     </main>
   <!-- /Cont page -->
 
+  <!-- footer -->
+    <?php include'../pag/footer/footer-all-ev-ma.php'; ?>
+  <!-- /footer -->
+
   <!-- javascript -->
+    <script src="../../js/app-loader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
