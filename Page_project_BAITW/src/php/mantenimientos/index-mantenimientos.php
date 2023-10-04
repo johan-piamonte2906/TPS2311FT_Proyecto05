@@ -41,7 +41,7 @@ require '../Conexiones/config.php';
 
   <!-- contenido pg -->
     <div class="container">
-
+<a href="https://w.app/BicycleAssociationIndustryAroundtheWorld">Agenda tu cita</a>
     </div>
   <!-- /contenido pg -->
   
