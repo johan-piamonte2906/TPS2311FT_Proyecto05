@@ -116,7 +116,7 @@
           <div class="col-lg-3 col-sm-6">
             <div class="single-box">
               <h2>Suscribete</h2>
-              <p>Te enviaremos nuestro catalo cada vez que se encuentren nuevos productos.</p>
+              <p>Te enviaremos nuestro catalogo cada vez que se encuentren nuevos productos Si lo deseas.</p>
               <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Ingresa tu correo.." aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <span class="input-group-text" id="basic-addon2"><i class="bi bi-envelope"></i></span>
