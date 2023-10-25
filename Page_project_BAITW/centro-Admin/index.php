@@ -1,5 +1,6 @@
 <?php
 
+require './src/config/config.php';
 require './src/config/database.php';
 require './src/clases/Admin-funciones.php';
 

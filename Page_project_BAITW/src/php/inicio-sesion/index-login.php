@@ -1,8 +1,8 @@
 <?php
 
-  require '../Conexiones/config.php';
-  require '../Conexiones/database.php';
-  require '../equipo-admin/index_funciones.php';
+  require_once '../Conexiones/config.php';
+  require_once '../Conexiones/database.php';
+  require_once '../equipo-admin/index_funciones.php';
 
 
   $db = new Database();

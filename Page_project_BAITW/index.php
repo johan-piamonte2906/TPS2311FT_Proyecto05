@@ -1,8 +1,7 @@
 <?php
 
-require './src/php/Conexiones/database.php';
-require './src/php/Conexiones/config.php';
-
+require_once './src/php/Conexiones/database.php';
+require_once './src/php/Conexiones/config.php';
 
 ?>
 <!DOCTYPE html>

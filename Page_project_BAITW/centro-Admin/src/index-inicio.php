@@ -1,4 +1,6 @@
 <!-- Header -->
+    <?php include'config/config.php'; ?>
+    <?php include'clases/Admin-funciones.php'; ?>
     <?php include'header.php'; ?>
 <!-- /header -->
 <main>
