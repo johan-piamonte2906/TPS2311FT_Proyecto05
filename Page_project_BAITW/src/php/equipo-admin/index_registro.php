@@ -22,7 +22,7 @@
     $repassword = trim($_POST['repassword']);
 
     if(esNulo([$nombres, $apellidos, $email, $telefono, $identificacion, $usuario, $password, $repassword])){
-        $errors[] = "debe llenar todos los campos";
+        $errors[] = "Debe llenar todos los campos";
     }
 
     if(!esEmail($email)){

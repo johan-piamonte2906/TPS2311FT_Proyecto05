@@ -15,7 +15,7 @@ require_once '../equipo-admin/index_funciones.php';
     $email = trim($_POST['email']);
 
     if(esNulo([$email])){
-        $errors[] = "debe llenar todos los campos";
+        $errors[] = "Debe llenar todos los campos";
     }
 
     if(!esEmail($email)){
@@ -29,6 +29,7 @@ require_once '../equipo-admin/index_funciones.php';
         $row = $sql->fetch(PDO::FETCH_ASSOC);
         $user_id = $row['id'];
         $nombres = $row['nombres'];
+        $apellidos = $row['apellidos'];
 
         $token = solicitaPassword($user_id, $con);
         if($token !==null){

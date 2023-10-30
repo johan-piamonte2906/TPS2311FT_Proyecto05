@@ -22,6 +22,9 @@ $sql->execute([$password,'correo_password']);
 <main>
     <div class="container-fluid px-4">
         <h2 class="mt-4"> Configuracion Actualizada</h2>
+        <div class="alert alert-success d-sm" role="alert">
+            Cambios Guardados Exitosamente
+        </div>
         <a href="index.php" class="btn btn-secondary">Regresar</a>
     </div>
 </main>

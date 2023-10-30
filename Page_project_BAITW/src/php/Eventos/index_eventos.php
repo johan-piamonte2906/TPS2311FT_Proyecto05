@@ -1,7 +1,6 @@
 <?php
 
-require '../Conexiones/config.php';
-require '../Conexiones/database.php';
+require_once '../Conexiones/config.php';
 
 ?>
 <!DOCTYPE html>
@@ -40,8 +39,12 @@ require '../Conexiones/database.php';
   <!-- /Nav -->
 
   <!-- contenido pg -->
-    <div class="container">
-
+    <div class="container mt-2 mb-2">
+      <div class="row">
+        <div class="col">
+          <a href="#!"><img class="rounded mx-auto d-block" src="../../img/Events/1/Evento_Baiatw.jpg" alt="" height="600"></a>
+        </div>
+      </div>
     </div>
   <!-- /contenido pg -->
   

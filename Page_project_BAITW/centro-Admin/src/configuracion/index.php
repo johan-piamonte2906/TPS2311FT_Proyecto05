@@ -33,6 +33,12 @@ foreach ($datos as $dato) {
 <main>
     <div class="container-fluid px-4">
         <h1 class="mt-4">Configuracion</h1>
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+            <div>
+                Antes De Guardar Los Cambios Rellena de Nuevo Todos Los Campos!
+            </div>
+        </div>
         <form action="guarda.php" method="post">
             <div class="row">
                 <div class="col-6">

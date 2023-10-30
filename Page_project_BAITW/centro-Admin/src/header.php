@@ -7,7 +7,7 @@
         <title>B A I A T W | Administrativo</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="<?php echo ADMIN_URL; ?>css/styles.css" rel="stylesheet" />
-        <link rel="shortcut icon" href="../img/fav-icons/favicon-bicycle.png" type="image/x-icon">
+        <link rel="shortcut icon" href="<?php echo ADMIN_URL; ?>img/favicon-bicycle.png" type="image/x-icon">
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
