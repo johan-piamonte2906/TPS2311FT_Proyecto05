@@ -1,6 +1,6 @@
 <?php
 
-require_once '../Conexiones/database.php';
+require_once '../Conexiones/config.php';
 require_once 'index_funciones.php';
 
 $datos = [];

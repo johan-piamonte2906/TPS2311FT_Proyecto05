@@ -1,7 +1,6 @@
 <?php
 
 require '../Conexiones/config.php';
-require '../Conexiones/database.php';
 
     if(isset($_POST['action'])){
         

@@ -1,7 +1,6 @@
 <?php
 
 require_once '../Conexiones/config.php';
-require_once '../Conexiones/database.php';
 require_once '../equipo-admin/index_funciones.php';
 
 
@@ -47,7 +46,7 @@ require_once '../equipo-admin/index_funciones.php';
 
         }
       }else{
-        $errors[] = "Lo sentimos Parece que no hay ningugna cuenta asociada al correo $email ";
+        $errors[] = "Lo sentimos Parece que no hay ninguna cuenta asociada al correo <b> $email </b> ";
       }
     }
 

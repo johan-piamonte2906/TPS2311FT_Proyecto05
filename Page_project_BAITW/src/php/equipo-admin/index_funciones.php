@@ -118,7 +118,7 @@
                     exit;
                 }
             }else{
-                return 'El Usuario No Se Encuentra Inactivo';
+                return 'El Usuario Se encuentra deshabilitado';
             }
         }
         return 'El Usuario y/o Contraseña Son Incorrectos';

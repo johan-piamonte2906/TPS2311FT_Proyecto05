@@ -1,7 +1,6 @@
 <?php
 
-  require '../Conexiones/config.php';
-  require '../Conexiones/database.php';
+  require_once '../Conexiones/config.php';
   require '../../mercado_pago/vendor/autoload.php';
 
   MercadoPago\SDK::setAccessToken(TOKEN_MP);

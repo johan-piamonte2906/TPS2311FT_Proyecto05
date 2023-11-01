@@ -1,7 +1,6 @@
 <?php
 
   require_once '../Conexiones/config.php';
-  require_once '../Conexiones/database.php';
   require_once '../equipo-admin/index_funciones.php';
 
 
@@ -22,7 +21,7 @@
     $repassword = trim($_POST['repassword']);
 
     if(esNulo([$nombres, $apellidos, $email, $telefono, $identificacion, $usuario, $password, $repassword])){
-        $errors[] = "Debe llenar todos los campos";
+        $errors[] = "Debe llenar todos los campos!";
     }
 
     if(!esEmail($email)){
@@ -53,7 +52,7 @@
             if($idUsuario > 0){
                 $url = SITE_URL . '/index_activa_cliente.php?id='. $idUsuario .'&token='. $token;
                 $asunto = "Activa Tu cuenta - Bici Bikers Association Industry Around the World ";
-                $cuerpo = "Estimad@: $nombres $apellidos <br> Es importante para nosotros tenerte en nuestra familia, Para Continuar <a href='$url'> Activa tu cuenta</a> y disfruta de nuestrs beneficios.";
+                $cuerpo = "<b>Estimad@</b>: $nombres $apellidos;  <br> Es importante para nosotros tenerte en nuestra familia,<br><b>Para Continuar  <a href='$url'> Activa tu cuenta</a></b> <br> y disfruta de nuestros beneficios.";
                 //http://localhost/TPS2311FT_Proyecto05/Page_project_BAITW/src/php/equipo-admin/index_activa_cliente.php?id=1&token=d59468261685632d4e030049062d2205
 
               if($mailer->enviarEmail($email, $asunto, $cuerpo)){

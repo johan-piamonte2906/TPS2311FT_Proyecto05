@@ -1,7 +1,6 @@
 <?php
 
 require_once '../Conexiones/config.php';
-require_once '../Conexiones/database.php';
 require_once '../equipo-admin/index_funciones.php';
 
 

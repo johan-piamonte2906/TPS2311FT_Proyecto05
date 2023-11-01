@@ -1,6 +1,5 @@
 <?php
 
-require_once './src/php/Conexiones/database.php';
 require_once './src/php/Conexiones/config.php';
 
 ?>
