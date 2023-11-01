@@ -19,7 +19,7 @@
     $proceso = $_POST['proceso'] ?? 'login';
 
     if(esNulo([$usuario, $password])){
-        $errors[] = "debe llenar todos los campos";
+        $errors[] = "Debe llenar todos los campos!";
     }
 
     if (count($errors) == 0){
@@ -140,7 +140,7 @@
             <button type="submit" class="btn btn-primary" >Ingresar</button>
           </div>
           <hr>
-          <div class="col-12 pt-4 pb-4">
+          <div class="col-12 pt-2 pb-4">
             ¿No tienes Cuenta? <a href="../equipo-admin/index_registro.php">Registrate Aquí</a>
           </div>
       </form>

@@ -40,8 +40,35 @@ require '../Conexiones/config.php';
   <!-- /Nav -->
 
   <!-- contenido pg -->
-    <div class="container">
-<a href="https://w.app/BicycleAssociationIndustryAroundtheWorld">Agenda tu cita</a>
+    <div class="container mb-5 pt-5 pb-5">
+      <h2 class="text-center pb-5">
+        <b>Agenda tu Cita de Mantenimiento para tu Bicicleta</b>
+      </h2>
+      <div class="row">
+        <div class="col-8">
+        ¿Tu bicicleta necesita un mantenimiento para seguir rodando de manera óptima? Estamos aquí para asegurarnos de que esté en perfectas condiciones. Agendar una cita es fácil: 
+        <br>
+        <br>
+        <b>Fecha y Hora</b>: Elige la fecha y hora que más te convenga. 
+        <br>
+        <br>
+        <b>Ubicación</b>: Puedes optar por traer tu bicicleta a nuestro taller o solicitar mantenimiento a domicilio. 
+        <br>
+        <br>
+        <b>Detalles del Mantenimiento</b>: Cuéntanos qué servicios necesitas, como ajustes, lubricación, reparaciones, etc. 
+        <br>
+        <br>
+        <br>
+        Nuestro compromiso es mantener tu bicicleta en excelente estado para que puedas disfrutar de tus paseos sin preocupaciones. Si tienes preguntas o necesitas más información, no dudes en contactarnos. <br>
+
+        ¡Gracias por elegirnos para el cuidado de tu bicicleta!
+        </div>
+        <div class="col-4">
+          <a href="https://w.app/BicycleAssociationIndustryAroundtheWorld">
+            <img src="../../img/BOTON-WHATSAPP.png" alt="">
+          </a>
+        </div>
+      </div>
     </div>
   <!-- /contenido pg -->
   
