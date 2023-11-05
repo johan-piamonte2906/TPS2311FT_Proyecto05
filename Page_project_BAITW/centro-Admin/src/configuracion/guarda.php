@@ -13,7 +13,7 @@ $email = $_POST['email'];
 $password = cifrar($_POST['password']);
 
 $sql = $con->prepare("UPDATE configuracion SET valor= ? WHERE nombre = ?");
-$sql->execute([$smtp,'correo_smpt']);
+$sql->execute([$smtp,'correo_smtp']);
 $sql->execute([$puerto,'correo_puerto']);
 $sql->execute([$email,'correo_email']);
 $sql->execute([$password,'correo_password']);

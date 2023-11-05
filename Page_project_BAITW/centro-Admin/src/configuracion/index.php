@@ -34,9 +34,9 @@ foreach ($datos as $dato) {
     <div class="container-fluid px-4">
         <h1 class="mt-4">Configuracion</h1>
         <div class="alert alert-danger d-flex align-items-center" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+            <i class="bi bi-exclamation-triangle m-2"></i>
             <div>
-                Antes De Guardar Los Cambios Rellena de Nuevo Todos Los Campos!
+                  Antes De Guardar Los Cambios Rellena de Nuevo Todos Los Campos!
             </div>
         </div>
         <form action="guarda.php" method="post">
@@ -44,18 +44,22 @@ foreach ($datos as $dato) {
                 <div class="col-6">
                     <label for="smtp">SMTP</label>
                     <input class="form-control" type="text" name="smtp" id="smtp" value="<?php echo $config['correo_smtp']; ?>">
+                    <span>smpt.example.com</span>
                 </div>
                 <div class="col-6">
                     <label for="puerto">Puerto</label>
                     <input class="form-control" type="text" name="puerto" id="puerto" value="<?php echo $config['correo_puerto']; ?>">
+                    <span>465 / 587</span>
                 </div>
                 <div class="col-6">
                     <label for="email">Correo electrónico</label>
                     <input class="form-control" type="text" name="email" id="email" value="<?php echo $config['correo_email']; ?>">
+                    <span>* example@example.com</span>
                 </div>
                 <div class="col-6">
                     <label for="password">Contraseña</label>
                     <input class="form-control" type="password" name="password" id="password" value="<?php echo $config['correo_password']; ?>">
+                    <span>* Your Password</span>
                 </div>
                 <div class="row mt-4">
                     <div class="col-12">

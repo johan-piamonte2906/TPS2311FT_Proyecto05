@@ -60,14 +60,13 @@ if(!empty($_POST)){
                     <span class="borderline"></span>
                     <form action="index.php" method="POST" autocomplete="off">
                         <h2>Inicia Sesion</h2>
-                        
                         <div class="inputbox d-xs">
-                            <input type="text" name="usuario" id="usuario" autofocus requireda>
+                            <input type="text" name="usuario" id="usuario" requireda>
                             <span>Username</span>
                             <i></i>
                         </div>
                         <div class="inputbox d-xs">
-                            <input type="password" name="password" id="password" autofocus requireda>
+                            <input type="password" name="password" id="password" requireda>
                             <span>Contraseña</span>
                             <i></i>
                         </div>

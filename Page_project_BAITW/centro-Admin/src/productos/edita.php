@@ -19,7 +19,7 @@ $con = $db->conectar();
 
 $id = $_GET['id'];
 
-$sql = $con->prepare("SELECT nombres, descrip, precio, stock, descuento, id_categoria FROM products WHERE id = ? AND activo = 1");
+$sql = $con->prepare("SELECT id, nombres, descrip, precio, stock, descuento, id_categoria FROM products WHERE id = ? AND activo = 1");
 $sql->execute([$id]);
 $producto = $sql->fetch(PDO::FETCH_ASSOC);
 
@@ -27,8 +27,19 @@ $sql = "SELECT id, nombre FROM categorias WHERE activo = 1";
 $resultado = $con->query($sql);
 $categorias = $resultado->fetchAll(PDO::FETCH_ASSOC);
 
-$ruta_img = '../../../src/img/productos/'. $id . '/';
-$ruta_prin = $ruta_img . 'index.jpg';
+$rutaImagenes = '../../../src/img/productos/'. $id . '/';
+$rutaPrincipal = $rutaImagenes . 'index.jpg';
+
+$imgenes = [];
+$dirInit = dir($rutaImagenes);
+
+while(($archivo = $dirInit->read()) !== false){
+    if($archivo != 'index.jpg' && (strpos($archivo, 'jpg') || strpos($archivo, 'jpeg'))){
+        $img = $rutaImagenes . $archivo;
+        $imgenes[] = $img;
+    }
+}
+$dirInit->close();
 ?>
 
 <style>
@@ -43,10 +54,11 @@ $ruta_prin = $ruta_img . 'index.jpg';
     <div class="container-fluid px-4">
         <h1 class="mt-3">Modificar Producto</h1>
         <hr>
-        <form action="guardar.php" method="post" enctype="multipart/form-data" autocomplete="off">
+        <form action="actualiza.php" method="post" enctype="multipart/form-data" autocomplete="off">
+            <input type="hidden" name="id" value="<?php echo $producto['id']; ?>">
             <div class="mb-3">
                 <label for="nombres" class="form-label">Titulo Producto</label>
-                <input class="form-control" type="text" name="nombres" id="nombres" value="<?php echo $producto['nombres']; ?>" required autofocus>
+                <input class="form-control" type="text" name="nombres" id="nombres" value="<?php echo htmlspecialchars($producto['nombres'], ENT_QUOTES); ?>" required autofocus>
             </div>
             <div class="mb-3">
                 <label for="descrip" class="form-label">Descripcion Producto</label>
@@ -55,7 +67,7 @@ $ruta_prin = $ruta_img . 'index.jpg';
             <div class="row mb-2">
                 <div class="col">
                     <label for="imagen_principal" class="form-label">Imagen Producto</label>
-                    <input type="file" class="form-control" name="imagen_principal" id="imagen_principal" accept="image/jpg" required>
+                    <input type="file" class="form-control" name="imagen_principal" id="imagen_principal" accept="image/jpg">
                 </div>
                 <div class="col">
                     <label for="imagenes_opcionales" class="form-label">Imagen Producto Opcional</label>
@@ -64,13 +76,20 @@ $ruta_prin = $ruta_img . 'index.jpg';
             </div>
             <div class="row mb-2">
                 <div class="col">
-                    <?php if(file_exists($ruta_prin)) {?>
-                        <img src="<?php echo $ruta_prin; ?>" class="img-thumbnail my-3"> <br>
+                    <?php if(file_exists($rutaPrincipal)) {?>
+                        <img src="<?php echo $rutaPrincipal . '?id='. time(); ?>" class="img-thumbnail my-3"> <br>
+                        <button class="btn btn-danger btn-sm" onclick="eliminaImagen('<?php echo $rutaPrincipal; ?>')">Eliminar</button>
                     <?php }?>
                 </div>
                 <div class="col">
-                    <label for="imagenes_opcionales" class="form-label">Imagen Producto Opcional</label>
-                    <input type="file" class="form-control" name="imagenes_opcionales" id="imagenes_opcionales" accept="image/jpg">
+                    <div class="row">
+                        <?php foreach($imgenes as $img) {?>
+                            <div class="col-4">
+                                <img src="<?php echo $img; ?>" class="img-thumbnail my-3"> <br>
+                                <button class="btn btn-danger btn-sm" onclick="eliminaImagen('<?php echo $img; ?>')">Eliminar</button>
+                            </div>
+                        <?php }?>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -109,6 +128,20 @@ $ruta_prin = $ruta_img . 'index.jpg';
         .catch( error => {
             console.error( error );
         } );
+    function eliminaImagen(urlImagen){
+        let url = 'elimina_imagen.php'
+        let formData = new FormData()
+        formData.append('urlImagen', urlImagen)
+
+        fetch(url,{
+            method: 'POST',
+            body: formData
+        }).then((response) =>{
+            if(response.ok){
+                location.reload()
+            }
+        })
+    }
 </script>
 
 

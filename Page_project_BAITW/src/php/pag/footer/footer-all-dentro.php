@@ -50,7 +50,7 @@
                                     <div class="col">
                                         <h3 class="text-center">Misión</h3>
                                         <hr>
-                                        <p>acilitar la movilidad sostenible y promover un estilo de vida activo al ofrecer bicicletas de alta calidad y soluciones de movilidad eco-amigables. Nos comprometemos a empoderar a las comunidades para que adopten la bicicleta como una forma de transporte eficiente, saludable y respetuosa con el medio ambiente, al tiempo que fomentamos la innovación y la excelencia en nuestro negocio.</p>
+                                        <p>Facilitar la movilidad sostenible y promover un estilo de vida activo al ofrecer bicicletas de alta calidad y soluciones de movilidad eco-amigables. Nos comprometemos a empoderar a las comunidades para que adopten la bicicleta como una forma de transporte eficiente, saludable y respetuosa con el medio ambiente, al tiempo que fomentamos la innovación y la excelencia en nuestro negocio.</p>
                                     </div>
                                 </div>
                             </div>

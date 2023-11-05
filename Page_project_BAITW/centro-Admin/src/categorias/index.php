@@ -26,7 +26,10 @@ $categorias = $resultado->fetchAll(PDO::FETCH_ASSOC);
 <main>
     <div class="container-fluid px-4">
         <h2 class="mt-4 pb-3">Categorías</h2>
-        <a href="nuevo.php" class="btn btn-primary">Nuevo</a>
+        <center>
+            <a href="nuevo.php" class="btn btn-primary">Nueva Categoria</a>
+        </center>
+        <hr class="mb-4">
         <div class="table-responsive">
             <table class="table table-hover table-sm">
                 <thead>
@@ -42,10 +45,10 @@ $categorias = $resultado->fetchAll(PDO::FETCH_ASSOC);
                         <tr>
                             <td><?php echo $categorias['id']; ?></td>
                             <td><?php echo $categorias['nombre']; ?></td>
-                            <td><a class="btn btn-warning btn-sm" href="editar.php?id=<?php echo $categorias['id']; ?>">Editar</a></td>
+                            <td><a class="btn btn-warning" href="editar.php?id=<?php echo $categorias['id']; ?>"><i class="bi bi-pencil-square"></i></a></td>
                             <td>
-                              <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar" data-bs-id="<?php echo $categorias['id']; ?>">
-                                 Eliminar
+                              <button type="button" class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#modalEliminar" data-bs-id="<?php echo $categorias['id']; ?>">
+                                <i class="bi bi-trash"></i>
                               </button>                                
                             </td>
                         </tr>

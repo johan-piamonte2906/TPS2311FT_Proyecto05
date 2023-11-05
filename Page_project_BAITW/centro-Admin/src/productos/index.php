@@ -26,7 +26,10 @@ $productos = $resultado->fetchAll(PDO::FETCH_ASSOC);
 <main>
     <div class="container-fluid px-4">
         <h1 class="mt-4 pb-3">Productos</h1>
-        <a href="nuevo.php" class="btn btn-primary">Nuevo Producto</a>
+        <center>
+            <a href="nuevo.php" class="btn btn-primary pt-2">Nuevo Producto</a>
+        </center>
+        <hr class="mb-5">
         <div class="table-responsive">
             <table class="table table-hover table-sm">
                 <thead>
@@ -51,10 +54,12 @@ $productos = $resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <?php echo $producto['stock']; ?>
                             </td>
                             <td>
-                                <a href="edita.php?id=<?php echo $producto['id'] ?>" class="btn btn-warning">Editar</a>        
+                                <a href="edita.php?id=<?php echo $producto['id'] ?>" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>        
                             </td>
                             <td>
-                                <?php echo $producto['id']; ?>
+                              <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar" data-bs-id="<?php echo $producto['id']; ?>">
+                                <i class="bi bi-trash"></i>
+                              </button>                                
                             </td>
                         </tr>
                     <?php }?>

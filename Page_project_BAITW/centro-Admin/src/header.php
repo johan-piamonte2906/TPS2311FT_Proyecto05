@@ -9,6 +9,7 @@
         <link href="<?php echo ADMIN_URL; ?>css/styles.css" rel="stylesheet" />
         <link rel="shortcut icon" href="<?php echo ADMIN_URL; ?>img/favicon-bicycle.png" type="image/x-icon">
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
