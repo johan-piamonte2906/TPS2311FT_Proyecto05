@@ -1,7 +1,7 @@
 <?php
 
-require '../Conexiones/config.php';
-require '../Conexiones/database.php';
+require_once '../Conexiones/config.php';
+
 $db = new Database();
 $con = $db->conectar();
 

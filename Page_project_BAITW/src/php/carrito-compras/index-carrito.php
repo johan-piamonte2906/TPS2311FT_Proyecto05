@@ -1,6 +1,6 @@
 <?php 
 
-    require '../Conexiones/config.php';
+    require_once '../Conexiones/config.php';
 
     if(isset($_POST['id'])) {
 
