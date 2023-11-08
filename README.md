@@ -1,30 +1,23 @@
-# Project B_A_I_T_W
+# *Proyecto B A I A T W*
 
-## Descripción del Proyecto
+[![Captura-de-pantalla-2023-11-08-141724.png](https://i.postimg.cc/brd8m6nv/Captura-de-pantalla-2023-11-08-141724.png)](http://bicibaiatw.infinityfreeapp.com/?i=1)
 
-- el proyecto esta elaborado por la empresa SSWD.
+---
 
-- Carpeta: (Page_project_BAITW) 
+![Captura-de-pantalla-2023-11-08-163131.png](https://i.postimg.cc/9Q99xbP1/Captura-de-pantalla-2023-11-08-163131.png)
 
+## ***Descripción del Proyecto***
 
-## Integrantes
+```text
+    - el proyecto esta elaborado por la empresa SSWD.
+    - Carpeta: "Page_project_BAITW"
+```
 
-    1.Johan Piamonte
-    2.Karen Alvarez
-    3.Paula Xiomara
+## ***Integrantes***
 
-## Integrante por unos dias de preuba
+```text
+    1.  Johan Harry Piamonte Martinez
+    2.  Karen Sofia Alvarez Rico
+    3.  Paula Xiomara 
+```
 
-    1. Kevin Yesid (Una semana)
-
-## Trabajo hecho
-
-    1. Apartado de las bicicletas con sus metodos de pago y Fincional
-
-## Que tienen que hacer Los integrantes
-
-    1. Xiomara : Apartado de los Mantenimientos.
-
-    2. Karen : Apartado de los eventos.
-
-    3. Kevin: Terminar el marqueteado Web.
