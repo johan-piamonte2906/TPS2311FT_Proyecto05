@@ -159,7 +159,7 @@
 
         <?php mostrarMensaje($errors); ?>
 
-        <form class="row g-3" action="index_registro.php" method="post">
+        <form class="row g-3" action="index_registro.php" method="post" autocomplete="off">
             <div class="col-md-6">
                 <label for="nombres"><span class="text-danger">*</span>Nombres</label>
                 <input class="form-control" type="text" name="nombres" id="nombres" requireda>

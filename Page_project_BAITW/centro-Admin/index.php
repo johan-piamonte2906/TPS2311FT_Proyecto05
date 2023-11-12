@@ -7,9 +7,11 @@ require './src/clases/Admin-funciones.php';
 $db = new Database();
 $con = $db->conectar();
 
-/* 
-$password = password_hash('admin', PASSWORD_DEFAULT);
-$sql = "INSERT INTO admin (usuario, password, nombre, email, activo, fecha_alta) VALUES ('admin','$password','Administrador','projectbaitw.05@gmail.com','1',NOW())";
+/*
+$password = password_hash('JohanpiamonteAdmin', PASSWORD_DEFAULT); == Usuario Johan
+$password = password_hash('AlvarezricoAdmin', PASSWORD_DEFAULT); == Usuario Karen
+$sql = "INSERT INTO admin (usuario, password, nombre, email, activo, fecha_alta) VALUES ('Johanpiamonte','$password','Administrador','projectbaitw.05@gmail.com','1',NOW())";
+$sql = "INSERT INTO admin (usuario, password, nombre, email, activo, fecha_alta) VALUES ('KarenSofia','$password','Administrador','projectbaitw.05@gmail.com','1',NOW())";
 $con->query($sql);
 */
 $errors = [];

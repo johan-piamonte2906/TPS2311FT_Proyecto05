@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `project_baiatw` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `project_baiatw`;
 -- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
 --
 -- Host: localhost    Database: project_baiatw
@@ -42,8 +44,7 @@ CREATE TABLE `admin` (
 
 LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-INSERT INTO `admin` VALUES (1,'JohanPiamonte','$2y$10$5XZzJBXhF4eXqAONkyiMMOmhb33wU8Fh/NoO8SRcBmOi/PFNPMPmu','Administrador','johanm2004@gmail.com',NULL,0,1,'2023-11-11 14:21:50'),
-(2,'KarenSofia','$2y$10$SGkBK2ugUJiJEpjriX4hsODkpiH4/XbUPgI9ewMQWGyBEnq4EEM9G','Administrador','alvarezricok@gmail.com',NULL,0,1,'2023-11-11 17:54:39');
+INSERT INTO `admin` VALUES (1,'JohanPiamonte','$2y$10$5XZzJBXhF4eXqAONkyiMMOmhb33wU8Fh/NoO8SRcBmOi/PFNPMPmu','Administrador','johanm2004@gmail.com',NULL,0,1,'2023-11-11 14:21:50'),(2,'KarenSofia','$2y$10$SGkBK2ugUJiJEpjriX4hsODkpiH4/XbUPgI9ewMQWGyBEnq4EEM9G','Administrador','alvarezricok@gmail.com',NULL,0,1,'2023-11-11 17:54:39');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -256,4 +257,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-11 18:28:39
+-- Dump completed on 2023-11-11 17:59:33
