@@ -50,7 +50,7 @@
               </nav>
             </li>
             <li class="nav-item"><a href="./src/php/Eventos/index_eventos.php" class="me-auto nav-link active color-dark">Eventos</a></li>
-            <li class="nav-item"><a href="./src/php/mantenimientos/index-mantenimientos.php" class="me-auto nav-link active color-dark">Maintenimientos</a></li>
+            <li class="nav-item"><a href="./src/php/mantenimientos/index-mantenimientos.php" class="me-auto nav-link active color-dark">Mantenimientos</a></li>
             <li class="nav-item"><a href="./src/php/index_bycle.php" class="me-auto nav-link active color-dark">Bicicletas Repuestos y Más</a></li>
           </ul>
         </div>
@@ -75,7 +75,7 @@
                     </svg> <?php echo $_SESSION['user_name']; ?>
                   </button>
                   <ul class="dropdown-menu bg-secondary" aria-labelledby="btn-cerrar-sesion">
-                  <li><a class="dropdown-item" href="./src/php/equipo-admin/index-compras.php">Mis Compras</a></li>
+                    <li><a class="dropdown-item" href="./src/php/equipo-admin/index-compras.php">Mis Compras</a></li>
                     <li><a class="dropdown-item" href="./src/php/equipo-admin/index-logout.php">Cerrar Sesion</a></li>
                   </ul>
                 </div>

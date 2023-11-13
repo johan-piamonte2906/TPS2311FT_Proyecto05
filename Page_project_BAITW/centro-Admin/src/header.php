@@ -45,8 +45,12 @@
                                 Productos
                             </a>                                                       
                             <a class="nav-link" href="<?php echo ADMIN_URL; ?>Usuarios">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                                 Usuarios
+                            </a>                                                       
+                            <a class="nav-link" href="<?php echo ADMIN_URL; ?>Detalles">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                                Detalles Compra
                             </a>                                                       
                             <a class="nav-link" href="<?php echo ADMIN_URL; ?>configuracion">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>

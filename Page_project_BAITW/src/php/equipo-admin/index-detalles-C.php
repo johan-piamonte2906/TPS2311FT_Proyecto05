@@ -88,7 +88,7 @@ require_once '../equipo-admin/index_funciones.php';
               </nav>
             </li>
             <li class="nav-item"><a href="../Eventos/index_eventos.php" class="me-auto nav-link active color-dark">Eventos</a></li>
-            <li class="nav-item"><a href="../mantenimientos/index-mantenimientos.php" class="me-auto nav-link active color-dark">Maintenimientos</a></li>
+            <li class="nav-item"><a href="../mantenimientos/index-mantenimientos.php" class="me-auto nav-link active color-dark">Mantenimientos</a></li>
             <li class="nav-item"><a href="../index_bycle.php" class="me-auto nav-link active color-dark">Bicicletas Repuestos y Más</a></li>
           </ul>
         </div>

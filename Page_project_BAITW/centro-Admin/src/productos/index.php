@@ -54,12 +54,12 @@ $productos = $resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <?php echo $producto['stock']; ?>
                             </td>
                             <td>
-                                <a href="edita.php?id=<?php echo $producto['id'] ?>" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>        
+                                <a href="edita.php?id=<?php echo $producto['id'] ?>" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
                             </td>
                             <td>
                               <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliminar" data-bs-id="<?php echo $producto['id']; ?>">
                                 <i class="bi bi-trash"></i>
-                              </button>                                
+                              </button>
                             </td>
                         </tr>
                     <?php }?>

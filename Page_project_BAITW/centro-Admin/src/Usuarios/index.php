@@ -25,7 +25,7 @@ $usuarios = $resultado->fetchAll(PDO::FETCH_ASSOC);
 
 <main>
     <div class="container-fluid px-4">
-        <h2 class="mt-4 pb-3">Usuarios</h2>
+        <h2 class="mt-4 pb-3">Usuarios Registrados</h2>
         <div class="table-resposive">
             <table class="table table-hover table-sm">
                 <thead>
