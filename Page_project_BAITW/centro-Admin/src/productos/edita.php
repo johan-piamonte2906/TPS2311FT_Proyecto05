@@ -62,7 +62,7 @@ $dirInit->close();
             </div>
             <div class="mb-3">
                 <label for="descrip" class="form-label">Descripcion Producto</label>
-                <textarea class="form-control" name="descrip" id="editor" required ><?php echo $producto['descrip']; ?></textarea>
+                <textarea class="form-control" name="descrip" id="editor" requireda ><?php echo $producto['descrip']; ?></textarea>
             </div>
             <div class="row mb-2">
                 <div class="col">

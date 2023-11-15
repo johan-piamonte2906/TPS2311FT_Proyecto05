@@ -53,7 +53,7 @@ if($stm->execute([$nombre, $descrip, $precio, $descuento, $stock, $categoria, $i
 
     // Subir otras imgs
     if(isset($_FILES['imagenes_opcionales'])){
-        $dir = '../../../src/img/productos/'. $id . '/';
+        $dir = '../../../src/img/productos/'. $id . '/1.jpg';
         $permitidos = ['jpeg', 'jpg'];
         if(!file_exists($dir)){
             mkdir($dir, 0777, true);

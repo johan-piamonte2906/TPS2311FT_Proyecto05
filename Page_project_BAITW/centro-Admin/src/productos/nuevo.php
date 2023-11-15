@@ -41,7 +41,7 @@ $categorias = $resultado->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <div class="mb-3">
                 <label for="descrip" class="form-label">Descripcion Producto</label>
-                <textarea class="form-control" name="descrip" id="editor" required ></textarea>
+                <textarea class="form-control" name="descrip" id="editor" requireda ></textarea>
             </div>
             <div class="row mb-2">
                 <div class="col">
