@@ -1,7 +1,6 @@
 <?php
 
-require '../Conexiones/database.php';
-require '../Conexiones/config.php';
+require_once '../Conexiones/config.php';
 
 ?>
 <!DOCTYPE html>
